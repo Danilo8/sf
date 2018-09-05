@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Termos de Privacidade</title>
+        <title>Search Food</title>
 
         <!--Favicon-->
         <link rel="shortcut icon" href="public/img/icon/SF.ico" type="image/x-icon">
@@ -25,6 +25,6 @@
     </head>
     <body>
         <?php include 'templates/navbar.php' ?>
-        <h1 class="text-center mt-5">Termos de Privacidade</h1>
+        <h1 class="text-center mt-5">Home</h1>
     </body>
 </html>
