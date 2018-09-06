@@ -34,8 +34,8 @@
         .container-fluid{background:url('../public/img/bg/bg-cadastro.jpg')no-repeat center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
     </style>
     <body>
-        <?php include 'app/views/templates/navbar.php' ?>
-        
+        <?php include 'app/views/templates/navbar.php'?>
+
         <div style="" class="container-fluid pt-4">
             <h1 class="text-center pt-5 text-white">
                 Faça parte do Search Food e
@@ -47,6 +47,33 @@
             <div class="card mx-5">
                 <div class="card-body">
                     <form id="form-cadastro" action="" method="post">
+                        <h3 class="text-center mb-3">Complete todas as etapas</h3>
+                        <div class="steps mx-5 px-5">                            
+                            <ul class="steps-container">
+                                <li style="width:33%;" class="activated">
+                                    <div class="step">
+                                        <div class="step-image"><span></span></div>
+                                        <div class="step-current">Etapa 1</div>
+                                        <div class="step-description">Proprietário</div>
+                                    </div>
+                                </li>
+                                <li style="width:33%;">
+                                    <div class="step">
+                                        <div class="step-image"><span></span></div>
+                                        <div class="step-current">Etapa 2</div>
+                                        <div class="step-description">Restaurante</div>
+                                    </div>
+                                </li>
+                                <li style="width:33%;">
+                                    <div class="step">
+                                        <div class="step-image"><span></span></div>
+                                        <div class="step-current">Etapa 3</div>
+                                        <div class="step-description">Dados de Acesso</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="step-bar" style="width: 33%;"></div>
+                        </div>
                         <div style="display: block" id="owner">
                             <h3 class="text-center mt-5 mb-5">Dados do Proprietário</h3>
                             <div class="form-group">
@@ -108,14 +135,14 @@
                                 <div class="col-3">
                                     <label for="state">Estado</label>
                                     <select name="state" id="state" class="form-control">
-                                        
+
                                     </select>
                                     <small class="text-danger" style="float: right" id="error_state"></small>
                                 </div>
                                 <div class="col">
                                     <label for="city">Cidade</label>
                                     <select name="city" id="city" class="form-control">
-                                        
+
                                     </select>
                                     <small class="text-danger" style="float: right" id="error_city"></small>
                                 </div>
@@ -160,7 +187,7 @@
             </div>
         </div>
 
-        <?php include 'app/views/templates/footer.php' ?>
+        <?php include 'app/views/templates/footer.php'?>
 
         <!--JS files-->
         <script src="../public/js/popper.js"></script>

@@ -14,6 +14,7 @@
 
         <!--CSS files-->
         <link rel="stylesheet" href="public/css/navbar-style.css">
+        <link rel="stylesheet" href="public/css/footer-style.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -26,5 +27,14 @@
     <body>
         <?php include 'templates/navbar.php' ?>
         <h1 class="text-center mt-5">Contato</h1>
+
+        <?php include 'templates/footer.php'?>
+
+        <!--JS files-->
+        <script src="public/js/popper.js"></script>
+        <script src="public/js/bootstrap.js"></script>
+        <script src="public/js/writer.js"></script>
+        <script src="public/js/valida-cadastro.js"></script>
+
     </body>
 </html>

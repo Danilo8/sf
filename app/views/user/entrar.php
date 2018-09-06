@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Entrar</title>
+        <title>Entrar/Cadastrar</title>
 
         <!--Favicon-->
         <link rel="shortcut icon" href="public/img/icon/SF.ico" type="image/x-icon">
@@ -14,6 +14,7 @@
 
         <!--CSS files-->
         <link rel="stylesheet" href="public/css/navbar-style.css">
+        <link rel="stylesheet" href="public/css/footer-style.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -24,7 +25,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <?php include 'templates/navbar.php' ?>
-        <h1 class="text-center mt-5">Home</h1>
+        <?php include 'app/views/templates/navbar.php' ?>
+        <h1 class="text-center mt-5">Entrar/Cadastrar</h1>
+
+        <?php include 'app/views/templates/footer.php'?>
+
+        <!--JS files-->
+        <script src="public/js/popper.js"></script>
+        <script src="public/js/bootstrap.js"></script>
+        <script src="public/js/writer.js"></script>
+        <script src="public/js/valida-cadastro.js"></script>
+
     </body>
 </html>
