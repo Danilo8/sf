@@ -1,0 +1,16 @@
+/*
+* style
+*/
+#right {
+    float: right;
+}
+.card{
+    border-radius: 0;
+    height: 87.8vh;
+}
+#form-login {
+    padding-top: 25px;
+}
+.form-control {
+    border-radius: 1rem;
+}

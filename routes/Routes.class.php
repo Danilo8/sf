@@ -55,7 +55,7 @@ class Routes
                                 
                                 // Entra aqui se o arquivo PHP do indice 1 não existir
                                 $this->Path = null;
-                                $this->File = '404';
+                                $this->File = 'error/404';
                                 $this->Link = (isset($this->Local[2]) ? $this->Local[2] : null);
                             }
                             
@@ -70,7 +70,7 @@ class Routes
                                 $this->Link = (isset($this->Local[2]) ? $this->Local[2] : null);
                         } else {
                                 $this->Path = null;
-                                $this->File = '404';
+                                $this->File = 'error/404';
                                 $this->Link = (isset($this->Local[2]) ? $this->Local[2] : null);
                         }
                         
@@ -100,7 +100,7 @@ class Routes
                 $this->File = 'home';
                 $this->Link = (isset($this->Local[0]) ? $this->Local : null);
             } else {
-                $this->File = '404';
+                $this->File = 'error/404';
                 $this->Link = null;
             }
             

@@ -1,0 +1,55 @@
+/*
+* style
+*/
+.form-control {
+    border-radius: 1rem;
+}
+#owner {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+#restaurant {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#acesso {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.btn-danger {
+    background-color: #d20911;
+}
+.disabled {
+    cursor: not-allowed;
+}
+.container-fluid {
+    height: 70vh;
+}
+.card {
+    background: #fff;
+    padding: 45px 0px;
+    margin-top: -100px;
+    z-index: 22;
+    position: relative;
+    border-radius: 20%;
+    border: none;
+}
+/*
+* writer
+*/
+#writer::after {
+  content: '|';
+  opacity: 1;
+  margin-left: 5px;
+  display: inline-block;
+  animation: blink .7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

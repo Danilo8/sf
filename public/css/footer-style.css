@@ -1,0 +1,52 @@
+/* Style all font awesome icons */
+#i {
+    padding: 20px;
+    font-size: 18px;
+    width: 58px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.55);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.55);
+    box-shadow: 0 1px 2px rgba(0,0,0,.55); 
+}
+
+/* Add a hover effect if you want */
+#i:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+/* G+ */
+.fa-google-plus {
+    background: #dd4b39;
+    color: white;
+}
+
+/* youtube*/
+.fa-youtube-play {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+a, a:hover {
+    color: #ffffff;
+}
