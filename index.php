@@ -1,20 +1,15 @@
 <?php
 
-/**
- * 
- */
-if (isset($_GET['page']) && !isset($_GET['d'])) {
+require('routes/Routes.class.php');
 
-    $page = $_GET['page'];
+define('REQ', "app" . DIRECTORY_SEPARATOR);
 
-    if (file_exists("app/views/$page.php")) {
-        include "app/views/$page.php";
-    } else {
-        echo "404. Página não Encontrada!";
-    }
+$route = new Routes();
 
+//var_dump($route);
+
+if ($route->Path != null) {
+    require(REQ . 'views' . DIRECTORY_SEPARATOR . '/' . $route->Path . '/' . $route->File . '.php');
 } else {
-
-    include "app/views/home.php";
-
+    require(REQ . 'views' . DIRECTORY_SEPARATOR . '/' . $route->File . '.php');
 }

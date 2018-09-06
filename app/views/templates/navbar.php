@@ -1,6 +1,6 @@
 <nav id="template-navbar" class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="home">
-        <img height="55" src="public/img/logo/logo.png" alt="Logo">
+        <img height="55" src="../public/img/logo/logo.png" alt="Logo">
         <span id="logo-text">Search Food</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
