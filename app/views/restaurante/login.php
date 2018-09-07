@@ -39,7 +39,7 @@
                     <div class="text-center mt-4">
                         <a href="cadastro">Cadastrar meu Restaurante</a>
                     </div>
-                    <form id="form-login" class="mx-4" action="#" method="post">
+                    <form id="form-login" class="mx-4" action="http://localhost/sf/app/Controllers/RestaurantController.php" method="post">
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" name="email" id="email" class="form-control" placeholder="Email">
@@ -54,6 +54,7 @@
                                 Recuperar Senha
                             </a>
                         </div>
+                        <input type="hidden" name="action" value="logar">
                         <div class="form-group">
                             <button class="btn btn-lg btn-primary btn-block" type="submit">
                                 Entrar

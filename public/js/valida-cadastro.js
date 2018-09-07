@@ -132,6 +132,8 @@ $(document).ready(function () {
     $('#btn1').click(function () {
         if (btn1) {
             animation('owner','restaurant');
+            $("#step2").addClass("activated");
+            $('.step-bar').css({ 'width': '66%'});
         }
     });
 
@@ -369,10 +371,17 @@ $(document).ready(function () {
             cep = false;
             validaBtn2();
         } else {
-            $('#error_cep').html("");
-            $('#cep').css({ 'border': '1px solid #ced4da' });
-            cep = true;
-            validaBtn2();
+            if ($("#cep").val().length < 9) {
+                $('#error_cep').html("CEP Inválido!");
+                $('#cep').css({ 'border-color': 'red' });
+                cep = false;
+                validaBtn2();
+            } else {
+                $('#error_cep').html("");
+                $('#cep').css({ 'border': '1px solid #ced4da' });
+                cep = true;
+                validaBtn2();
+            }
         }
     });
 
@@ -383,6 +392,8 @@ $(document).ready(function () {
     */
     $('#vtr1').click(function () {
         animation('restaurant', 'owner');
+        $("#step2").removeClass("activated");
+        $('.step-bar').css({ 'width': '33%' });
     });
 
     /**
@@ -393,6 +404,8 @@ $(document).ready(function () {
     $('#btn2').click(function () {
         if (btn2) {
             animation('restaurant', 'acesso');
+            $("#step3").addClass("activated");
+            $('.step-bar').css({ 'width': '100%' });
         }
     });
 
@@ -405,7 +418,7 @@ $(document).ready(function () {
      */
     function validaBtn2() {
         if (
-            restaurant_name && cnpj && restaurant_phone && address &&
+            restaurant_name /*&& cnpj*/ && restaurant_phone && address &&
             neighborhood && state && city && cep
         ) {
             $("#btn2").removeClass("disabled");
@@ -483,6 +496,95 @@ $(document).ready(function () {
     * Validando os Dados do Restaurante
     * -----------------------------------------------------------------------
     */
+    var email;
+    var password;
+    var password_confirm;
+
+    /**
+     * -----------------------------------------------------------------------
+     * Função que verifica se o campo Email de Acesso 
+     * foi preenchido ou não.
+     * -----------------------------------------------------------------------
+     */
+    $("#email").blur(function () {
+        if ($('#email').val() == "") {
+            $('#error_email').html("Email de Acesso é Obrigatório!");
+            $('#email').css({ 'border-color': 'red' });
+            email = false;
+            validaBtn3();
+        } else {
+            var sEmail = $("#email").val();
+            // filtros
+            var emailFilter = /^.+@.+\..{2,}$/;
+            var illegalChars = /[\(\)\<\>\,\;\:\\\/\"\[\]]/
+            // condição
+            if (!(emailFilter.test(sEmail)) || sEmail.match(illegalChars)) {
+                $('#error_email').html("Email Inválido!");
+                $('#email').css({ 'border-color': 'red' });
+                email = false;
+                validaBtn3();
+            } else {
+                $('#email').css({ 'border': '1px solid #ced4da' });
+                $('#error_email').html('');
+                email = true;
+                validaBtn3();
+            }
+        }
+    });
+
+    /**
+     * -----------------------------------------------------------------------
+     * Função que verifica se o campo Password 
+     * foi preenchido ou não.
+     * -----------------------------------------------------------------------
+     */
+    $("#password").blur(function () {
+        if ($("#password").val() == "") {
+            $("#error_password").html("Senha é Obrigatório!");
+            $("#password").css({ 'border-color': 'red' });
+            password = false;
+            validaBtn3();
+        } else {
+            if ($("#password").val().length < 6) {
+                $('#error_password').html("Senha precisa no mínimo ter 6 caracteres!");
+                $('#password').css({ 'border-color': 'red' });
+                password = false;
+                validaBtn3();
+            } else {
+                $('#error_password').html("");
+                $('#password').css({ 'border': '1px solid #ced4da' });
+                password = true;
+                validaBtn3();
+            }
+        }
+    });
+    
+    /**
+     * -----------------------------------------------------------------------
+     * Função que verifica se o campo Password Confirm
+     * foi preenchido ou não.
+     * -----------------------------------------------------------------------
+     */
+    $("#password_confirm").blur(function () {
+        if ($("#password_confirm").val() == "") {
+            $("#error_password_confirm").html("Confirmação de Senha é Obrigatório!");
+            $("#password_confirm").css({ 'border-color': 'red' });
+            password_confirm = false;
+            validaBtn3();
+        } else {
+            if ($("#password_confirm").val() != $("#password").val()) {
+                $('#error_password_confirm').html("Senhas são diferentes!");
+                $('#password_confirm').css({ 'border-color': 'red' });
+                password_confirm = false;
+                validaBtn3();
+            } else {
+                $('#error_password').html("");
+                $('#password').css({ 'border': '1px solid #ced4da' });
+                password_confirm = true;
+                validaBtn3();
+            }
+        }
+    });
 
     /**
     * ----------------------------------------------------------
@@ -491,7 +593,25 @@ $(document).ready(function () {
     */
     $('#vtr2').click(function () {
         animation('acesso', 'restaurant');
+        $("#step3").removeClass("activated");
+        $('.step-bar').css({ 'width': '66%' });
     });
+
+    /**
+     * -----------------------------------------------------------
+     * Função que abilita o btn3
+     * -----------------------------------------------------------
+     * @returns false or true
+     * -----------------------------------------------------------
+     */
+    function validaBtn3() {
+        if (email && password && password_confirm) {
+            $("#btn3").removeClass("disabled");
+        } else {
+            $("#btn3").addClass("disabled");
+            
+        }
+    }
 
 
     /**

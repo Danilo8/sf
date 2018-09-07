@@ -46,35 +46,37 @@
         <div id="container" class="container mb-4">
             <div class="card mx-5">
                 <div class="card-body">
-                    <form id="form-cadastro" action="" method="post">
+                    <form id="form-cadastro" action="http://localhost/sf/app/Controllers/RestaurantController.php" method="post">
                         <h3 class="text-center mb-3">Complete todas as etapas</h3>
-                        <div class="steps mx-5 px-5">                            
-                            <ul class="steps-container">
-                                <li style="width:33%;" class="activated">
-                                    <div class="step">
-                                        <div class="step-image"><span></span></div>
-                                        <div class="step-current">Etapa 1</div>
-                                        <div class="step-description">Proprietário</div>
-                                    </div>
-                                </li>
-                                <li style="width:33%;">
-                                    <div class="step">
-                                        <div class="step-image"><span></span></div>
-                                        <div class="step-current">Etapa 2</div>
-                                        <div class="step-description">Restaurante</div>
-                                    </div>
-                                </li>
-                                <li style="width:33%;">
-                                    <div class="step">
-                                        <div class="step-image"><span></span></div>
-                                        <div class="step-current">Etapa 3</div>
-                                        <div class="step-description">Dados de Acesso</div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="step-bar" style="width: 33%;"></div>
+                        <div class="mx-5 px-5">                            
+                            <div class="steps">                            
+                                <ul class="steps-container">
+                                    <li id="step1" style="width:33%;" class="activated">
+                                        <div class="step">
+                                            <div class="step-image"><span></span></div>
+                                            <div class="step-current">Etapa 1</div>
+                                            <div class="step-description">Proprietário</div>
+                                        </div>
+                                    </li>
+                                    <li id="step2" style="width:33%;" class="">
+                                        <div class="step">
+                                            <div class="step-image"><span></span></div>
+                                            <div class="step-current">Etapa 2</div>
+                                            <div class="step-description">Restaurante</div>
+                                        </div>
+                                    </li>
+                                    <li id="step3" style="width:33%;" class="">
+                                        <div class="step">
+                                            <div class="step-image"><span></span></div>
+                                            <div class="step-current">Etapa 3</div>
+                                            <div class="step-description">Dados de Acesso</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="step-bar" style="width: 33%;border-radius: 20px"></div>
+                            </div>
                         </div>
-                        <div style="display: block" id="owner">
+                        <div style="display: none" id="owner">
                             <h3 class="text-center mt-5 mb-5">Dados do Proprietário</h3>
                             <div class="form-group">
                                 <label for="owner_name">Nome</label>
@@ -163,23 +165,27 @@
                                 <button id="btn2"  type="button" class="btn btn-lg btn-danger disabled">Continuar</button>
                             </div>
                         </div>
-                        <div style="display: none" id="acesso">
+                        <div style="display: block" id="acesso">
                             <h3 class="text-center mt-5 mb-5">Dados de Acesso</h3>
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                <small class="text-danger" style="float: right" id="error_email"></small>
                             </div>
                             <div class="form-group">
                                 <label for="password">Senha</label>
                                 <input type="password" name="password" id="password" class="form-control" placeholder="Senha">
+                                <small class="text-danger" style="float: right" id="error_password"></small>
                             </div>
-                            <div class="form-group">
-                                <label for="c_password">Confirme a Senha</label>
-                                <input type="password" name="c_password" id="c_password" class="form-control" placeholder="Confirme a Senha">
+                            <div class="form-group mb-5">
+                                <label for="password_confirm">Confirme a Senha</label>
+                                <input type="password" name="password_confirm" id="password_confirm" class="form-control" placeholder="Confirme a Senha">
+                                <small class="text-danger" style="float: right" id="error_password_confirm"></small>
                             </div>
+                            <input type="hidden" name="action" value="cadastrar">
                             <div class="form-group text-right">
                                 <button id="vtr2" type="button" class="btn btn-lg btn-secondary">Voltar</button>
-                                <button id="btn3" type="button" class="btn btn-lg btn-danger">Continuar</button>
+                                <button id="btn3" type="button" class="btn btn-lg btn-danger disabled">Cadastrar</button>
                             </div>
                         </div>
                     </form>
