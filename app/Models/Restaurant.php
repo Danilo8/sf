@@ -31,12 +31,7 @@ class Restaurant
         }
     }
 
-    public function Select($id)
-    {
-        
-    }
-
-    public function Listar()
+    public function Select()
     {
         
     }
@@ -49,5 +44,23 @@ class Restaurant
     public function Delete($id)
     {
         
+    }
+
+    public function Listar()
+    {
+        
+    }
+
+    public function Auth($email, $senha)
+    {
+        $sql = "SELECT * FROM `restaurants` WHERE `email` = $email AND `password` = ". md5($_POST['senha']);
+
+        $result = mysqli_query($this->DB, $sql);
+
+        if (mysqli_num_rows($result) == 1) {
+            return $result;
+        } else {
+            return false;
+        }
     }
 }

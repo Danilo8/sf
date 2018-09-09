@@ -34,7 +34,7 @@
         <?php include 'app/views/templates/navbar.php' ?>
 
         <div id="right" class="col-4 p-0">
-            <div class="card">
+            <div class="card bg-light">
                 <div class="card-body">
                     <h3 class="text-center pt-4">
                         Acessar Painel
@@ -46,10 +46,12 @@
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                            <small class="text-danger" style="float: right" id="error_email"></small>
                         </div>
                         <div class="form-group">
                             <label for="password">Senha</label>
                             <input type="password" name="password" id="password" class="form-control" placeholder="Senha">
+                            <small class="text-danger" style="float: right" id="error_password"></small>
                         </div>
                         <div class="form-group text-center">
                             <a class="text-danger" href="#">
@@ -68,13 +70,17 @@
             </div>
         </div>
 
-        <script type='text/javascript'>
+        <!--JS files-->
+        <script src="../public/js/popper.js"></script>
+        <script src="../public/js/bootstrap.js"></script>
+        <script src="../public/js/valida-login.js"></script>
+        <!--<script type='text/javascript'>
             swal({
                 type: 'error',
                 showConfirmButton: false,
                 title: 'Não foi possivel Cadastrar o Prato!',
                 timer: 12000,
             })
-        </script>
+        </script>-->
     </body>
 </html>

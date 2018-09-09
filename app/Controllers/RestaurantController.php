@@ -42,12 +42,18 @@ class RestaurantController
         
     }
 
-    /**
-     * 
-     */
     public function logar()
-    {        
-        $this->redirect('http://localhost/sf/restaurante/login');
+    {     
+        $auth = $this->model->Auth($_POST['email'], $_POST['senha']);
+
+        if (!$auth) {
+            
+        } else {
+            session_start();
+            $row = $auth->fetch_assoc();
+            $_SESSION['restaurant'] = $row['id'];
+            $this->redirect('http://localhost/sf/restaurante/dashboard');
+        }
     }
 
     /**
