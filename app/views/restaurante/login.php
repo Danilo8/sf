@@ -23,13 +23,16 @@
 
         <!--fa fa-icons-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--cdn Sweet Alert 2-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.0/sweetalert2.all.js"></script>
     </head>
     <style>
         body{background:url('../public/img/bg/bg-login.jpg')no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
     </style>
     <body>
         <?php include 'app/views/templates/navbar.php' ?>
-        
+
         <div id="right" class="col-4 p-0">
             <div class="card">
                 <div class="card-body">
@@ -64,5 +67,14 @@
                 </div>
             </div>
         </div>
+
+        <script type='text/javascript'>
+            swal({
+                type: 'error',
+                showConfirmButton: false,
+                title: 'Não foi possivel Cadastrar o Prato!',
+                timer: 12000,
+            })
+        </script>
     </body>
 </html>

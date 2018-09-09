@@ -26,7 +26,7 @@ class RestaurantController
                     break;
                 
                 default:
-                    
+                    $this->redirect('http://localhost/sf/404');
                     break;
             }
         }
@@ -34,6 +34,11 @@ class RestaurantController
 
     public function cadastrar()
     {
+        if ($this->model->Insert($_POST)) {
+            //$this->redirect('http://localhost/sf/restaurante/login');
+        } else {
+            //$this->redirect('http://localhost/sf/restaurante/cadastro');
+        }
         
     }
 
@@ -42,7 +47,7 @@ class RestaurantController
      */
     public function logar()
     {        
-        //$this->redirect('http://localhost/sf/restaurante/login');
+        $this->redirect('http://localhost/sf/restaurante/login');
     }
 
     /**

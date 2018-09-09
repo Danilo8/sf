@@ -418,7 +418,7 @@ $(document).ready(function () {
      */
     function validaBtn2() {
         if (
-            restaurant_name /*&& cnpj*/ && restaurant_phone && address &&
+            restaurant_name && cnpj && restaurant_phone && address &&
             neighborhood && state && city && cep
         ) {
             $("#btn2").removeClass("disabled");
@@ -578,8 +578,8 @@ $(document).ready(function () {
                 password_confirm = false;
                 validaBtn3();
             } else {
-                $('#error_password').html("");
-                $('#password').css({ 'border': '1px solid #ced4da' });
+                $('#error_password_confirm').html("");
+                $('#password_confirm').css({ 'border': '1px solid #ced4da' });
                 password_confirm = true;
                 validaBtn3();
             }
@@ -607,9 +607,10 @@ $(document).ready(function () {
     function validaBtn3() {
         if (email && password && password_confirm) {
             $("#btn3").removeClass("disabled");
+            $("#btn3").attr('type', 'submit');
         } else {
             $("#btn3").addClass("disabled");
-            
+            $("#btn3").attr('type', 'button');
         }
     }
 

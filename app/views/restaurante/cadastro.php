@@ -76,7 +76,7 @@
                                 <div class="step-bar" style="width: 33%;border-radius: 20px"></div>
                             </div>
                         </div>
-                        <div style="display: none" id="owner">
+                        <div style="display: block" id="owner">
                             <h3 class="text-center mt-5 mb-5">Dados do Proprietário</h3>
                             <div class="form-group">
                                 <label for="owner_name">Nome</label>
@@ -165,7 +165,7 @@
                                 <button id="btn2"  type="button" class="btn btn-lg btn-danger disabled">Continuar</button>
                             </div>
                         </div>
-                        <div style="display: block" id="acesso">
+                        <div style="display: none" id="acesso">
                             <h3 class="text-center mt-5 mb-5">Dados de Acesso</h3>
                             <div class="form-group">
                                 <label for="email">Email</label>

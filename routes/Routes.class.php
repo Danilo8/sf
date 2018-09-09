@@ -10,7 +10,7 @@ class Routes
     public $Local;
     public $Path;
     public $File;
-    public $Link;
+    //public $Link;
 
     /**
      * 
