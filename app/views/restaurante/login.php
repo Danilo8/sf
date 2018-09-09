@@ -48,7 +48,7 @@
                             <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                             <small class="text-danger" style="float: right" id="error_email"></small>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-4">
                             <label for="password">Senha</label>
                             <input type="password" name="password" id="password" class="form-control" placeholder="Senha">
                             <small class="text-danger" style="float: right" id="error_password"></small>
@@ -61,7 +61,7 @@
                         </div>
                         <input type="hidden" name="action" value="logar">
                         <div class="form-group">
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                            <button id="btn-login" class="btn btn-lg btn-primary btn-block" type="button">
                                 Entrar
                             </button>
                         </div>
