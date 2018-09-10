@@ -32,7 +32,7 @@
     </style>
     <body>
         <?php include 'app/views/templates/navbar.php' ?>
-
+        
         <div id="right" class="col-4 p-0">
             <div class="card bg-light">
                 <div class="card-body">

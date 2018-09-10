@@ -48,6 +48,7 @@ class RestaurantController
 
         if (!$auth) {
             
+            $this->redirect('http://localhost/sf/restaurante/login');
         } else {
             session_start();
             $row = $auth->fetch_assoc();
