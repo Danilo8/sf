@@ -47,7 +47,7 @@ class RestaurantController
         $auth = $this->model->Auth($_POST['email'], $_POST['senha']);
 
         if (!$auth) {
-            
+            $route->Link = "error";
             $this->redirect('http://localhost/sf/restaurante/login');
         } else {
             session_start();

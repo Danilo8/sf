@@ -79,7 +79,7 @@
         <script src="../public/js/bootstrap.js"></script>
         <script src="../public/js/valida-login.js"></script>
         
-        <?php if (isset($_GET['error'])) { ?>
+        <?php if ($route->Link == "error") { ?>
             <script type='text/javascript'>
                 swal({
                     type: 'error',

@@ -17,7 +17,7 @@ class Routes
      */
     public function __construct()
     {
-        $this->Local = filter_input(INPUT_GET, 'page', FILTER_DEFAULT);
+        $this->Local = strip_tags(filter_input(INPUT_GET, 'page', FILTER_DEFAULT));
         $this->Local = ($this->Local ? $this->Local: 'home');
         $this->Local = explode('/', $this->Local);
         $this->checkLink();

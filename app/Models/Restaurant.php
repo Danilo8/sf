@@ -53,7 +53,8 @@ class Restaurant
 
     public function Auth($email, $senha)
     {
-        $sql = "SELECT * FROM `restaurants` WHERE `email` = $email AND `password` = ". md5($_POST['senha']);
+        $cipSenha = md5($senha);
+        $sql = "SELECT * FROM `restaurants` WHERE `email` = '$email' AND `password` = '$cipSenha'";
 
         $result = mysqli_query($this->DB, $sql);
 
