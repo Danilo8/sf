@@ -1,0 +1,32 @@
+.navbar-brand {
+    margin-left: 2%;
+}
+#logo-text {
+    font-family: 'Copse', sans-serif;
+    font-size: 30px;
+    color: white;
+    vertical-align: bottom;
+}
+.navbar-text a span {
+    font-size: 20px;
+}
+.navbar-danger {
+    background-color: #d20911;
+}
+.nav-link {
+    color: #ffffff;
+    border-bottom: 4px solid transparent;
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-bottom: 4.5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 1.5px; 
+}
+.nav-link:hover, .active {
+    color: #ffffff;
+    border-bottom: 4px solid #ffffff;
+}
+#logout {
+    color: #FF0000;
+}

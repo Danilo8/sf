@@ -6,6 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Acessar Painel</title>
 
+        <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
         <!--Favicon-->
         <link rel="shortcut icon" href="../public/img/icon/SF.ico" type="image/x-icon">
 
@@ -74,13 +78,16 @@
         <script src="../public/js/popper.js"></script>
         <script src="../public/js/bootstrap.js"></script>
         <script src="../public/js/valida-login.js"></script>
-        <!--<script type='text/javascript'>
-            swal({
-                type: 'error',
-                showConfirmButton: false,
-                title: 'Não foi possivel Cadastrar o Prato!',
-                timer: 12000,
-            })
-        </script>-->
+        
+        <?php if (isset($_GET['error'])) { ?>
+            <script type='text/javascript'>
+                swal({
+                    type: 'error',
+                    showConfirmButton: false,
+                    title: 'ERRO',
+                    timer: 12000,
+                })
+            </script>
+        <?php } ?>
     </body>
 </html>

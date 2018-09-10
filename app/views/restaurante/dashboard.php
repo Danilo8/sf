@@ -1,6 +1,6 @@
 <?php 
     if (!isset($_SESSION['restaurant'])) {
-        header("Location: http://localhost/sf/restaurante/login");
+        //header("Location: http://localhost/sf/restaurante/login");
     }    
 ?>
 <!DOCTYPE html>
@@ -11,6 +11,10 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Dashboard | Search Food</title>
 
+        <!--Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
         <!--Favicon-->
         <link rel="shortcut icon" href="../public/img/icon/SF.ico" type="image/x-icon">
 
@@ -19,6 +23,7 @@
 
         <!--CSS files-->
         <link rel="stylesheet" href="../public/css/navbar-style.css">
+        <link rel="stylesheet" href="../public/css/dashboard-template.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,6 +37,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.0/sweetalert2.all.js"></script>
     </head>
     <body>
-        
+        <?php include 'app/views/templates/dashboard.php'?>
     </body>
 </html>

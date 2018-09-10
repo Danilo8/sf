@@ -62,7 +62,7 @@ class RestaurantController
      */
     public function redirect($uri)
     {
-        return header('Location: ' . $uri);
+        header('Location: ' . $uri);
     }
 }
 
