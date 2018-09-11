@@ -2,7 +2,11 @@
 
 namespace Models;
 
-require_once '../../database/DB/DB_connection.php';
+if ($route->Path == null) {
+    require_once '../../database/DB/DB_connection.php';
+} else {
+    require_once 'database/DB/DB_connection.php';
+}
 
 use DB\DB_connection;
 

@@ -1,3 +1,9 @@
+<?php 
+    //  require_once 'app/Controllers/RestaurantController.php';
+    //  use Controllers\RestaurantController;
+    //  $session = new RestaurantController();
+?>
+
 <!--Estrutura do Template-->
 <nav class="navbar navbar-dark bg-dark">
     <span class="navbar-brand mb-0 h1 mr-0">
@@ -5,7 +11,9 @@
         <span id="logo-text">Search Food</span>
     </span>
     <ul class="nav justify-content-center">
-        <h3 class="text-white">Nome do Restaurante</h3>
+        <h3 class="text-white">
+            <?php  ?>
+        </h3>
     </ul>
     <ul class="nav justify-content-end">
         <?php include 'app/views/templates/notificacoes.php' ?>

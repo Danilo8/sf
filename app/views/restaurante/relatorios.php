@@ -1,6 +1,6 @@
 <?php 
     if (!isset($_SESSION['restaurant'])) {
-        //header("Location: http://localhost/sf/restaurante/login");
+        header("Location: http://localhost/sf/restaurante/login");
     }    
 ?>
 <!DOCTYPE html>

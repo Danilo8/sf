@@ -2,7 +2,11 @@
 
 namespace Controllers;
 
-require_once '../Models/Restaurant.php';
+if ($route->Path == null) {
+    require_once '../Models/Restaurant.php';
+} else {
+    require_once 'app/Models/Restaurant.php';
+}
 
 use Models\Restaurant;
 
@@ -44,10 +48,10 @@ class RestaurantController
 
     public function logar()
     {     
-        $auth = $this->model->Auth($_POST['email'], $_POST['senha']);
+        $auth = $this->model->Auth($_POST['email'], $_POST['password']);
 
         if (!$auth) {
-            $route->Link = "error";
+            //$route->Link = "error";
             $this->redirect('http://localhost/sf/restaurante/login');
         } else {
             session_start();
@@ -63,6 +67,11 @@ class RestaurantController
     public function redirect($uri)
     {
         header('Location: ' . $uri);
+    }
+
+    public function teste()
+    {
+        echo "OI";
     }
 }
 

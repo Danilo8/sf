@@ -1,8 +1,3 @@
-<?php 
-    if (!isset($_SESSION['restaurant'])) {
-        //header("Location: http://localhost/sf/restaurante/login");
-    }    
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -12,8 +7,8 @@
         <title>Dashboard | Search Food</title>
 
         <!--Fonts-->
-<link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
         <!--Favicon-->
         <link rel="shortcut icon" href="../public/img/icon/SF.ico" type="image/x-icon">
