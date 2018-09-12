@@ -43,9 +43,9 @@ class RestaurantController
     public function cadastrar()
     {
         if ($this->model->Insert($_POST)) {
-            //$this->redirect('http://localhost/sf/restaurante/login');
+            $this->redirect('http://localhost/sf/restaurante/login/cadastro-sucesso');
         } else {
-            //$this->redirect('http://localhost/sf/restaurante/cadastro');
+            $this->redirect('http://localhost/sf/restaurante/cadastro/');
         }
         
     }

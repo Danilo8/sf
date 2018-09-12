@@ -34,9 +34,43 @@
     <body>
         <?php include 'app/views/templates/dashboard.php'?>
 
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-4 p-0">
+                    <div class="card">
+                        <div class="card-header">
+                            PEDIDOS EM ABERTO
+                            <span class="badge badge-success badge-pill" style="float: right;font-size: 18px">
+                                0
+                            </span>
+                        </div>
+                        <div class="card-body">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col p-0">
+                    <div class="card">
+                        <div class="card-header">
+                            INFORMAÇÕES DO PEDIDO
+                        </div>
+                        <div class="card-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!--JS files-->
         <script src="http://localhost/sf/public/js/popper.js"></script>
         <script src="http://localhost/sf/public/js/bootstrap.js"></script>
         <script src="http://localhost/sf/public/js/valida-login.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            });
+        </script>
     </body>
 </html>

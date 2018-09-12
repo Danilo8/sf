@@ -1,6 +1,9 @@
 <?php 
      require_once 'app/Controllers/SessionController.php';
+    //  require_once 'app/Controllers/RestaurantController.php';
+
      use Controllers\SessionController;
+
      $session = new SessionController();
 
      if(!isset($_SESSION['restaurant'])){
