@@ -7,17 +7,21 @@ if ($route->Path == null) {
 } else {
     require_once 'app/Models/Restaurant.php';
 }
+require_once 'SessionController.php';
 
+use Controllers\SessionController;
 use Models\Restaurant;
 
 class RestaurantController
 {
     
     private $model;
+    private $controller;
 
     public function __construct()
     {
         $this->model = new Restaurant();
+        $this->controller = new SessionController();
 
         if (isset($_POST)) {
             switch ($_POST['action']) {
@@ -51,27 +55,19 @@ class RestaurantController
         $auth = $this->model->Auth($_POST['email'], $_POST['password']);
 
         if (!$auth) {
-            //$route->Link = "error";
-            $this->redirect('http://localhost/sf/restaurante/login');
+            $this->redirect('http://localhost/sf/restaurante/login/email-ou-senha-incorretos');
         } else {
-            session_start();
             $row = $auth->fetch_assoc();
-            $_SESSION['restaurant'] = $row['id'];
-            $this->redirect('http://localhost/sf/restaurante/dashboard');
+            $this->controller->start_session('restaurant', $row['id']);
         }
     }
 
     /**
      * 
      */
-    public function redirect($uri)
+    public function redirect($to)
     {
-        header('Location: ' . $uri);
-    }
-
-    public function teste()
-    {
-        echo "OI";
+        header('Location: ' . $to);
     }
 }
 

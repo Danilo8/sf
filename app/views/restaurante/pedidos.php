@@ -1,15 +1,10 @@
-<?php 
-    if (!isset($_SESSION['restaurant'])) {
-        header("Location: http://localhost/sf/restaurante/login");
-    }    
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Dashboard | Search Food</title>
+        <title>Pedidos | Search Food</title>
 
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
@@ -38,5 +33,10 @@
     </head>
     <body>
         <?php include 'app/views/templates/dashboard.php'?>
+
+        <!--JS files-->
+        <script src="http://localhost/sf/public/js/popper.js"></script>
+        <script src="http://localhost/sf/public/js/bootstrap.js"></script>
+        <script src="http://localhost/sf/public/js/valida-login.js"></script>
     </body>
 </html>

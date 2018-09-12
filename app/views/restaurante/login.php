@@ -1,3 +1,11 @@
+<?php 
+    // if ($route->Link == ) {
+    //     # codehttp://localhost/sf.
+    // } else {
+    //     # codehttp://localhost/sf.
+    // }
+    
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -11,14 +19,14 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
         <!--Favicon-->
-        <link rel="shortcut icon" href="../public/img/icon/SF.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="http://localhost/sf/public/img/icon/SF.ico" type="image/x-icon">
 
         <!--cdn Bootstrap CSS file-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
         <!--CSS files-->
-        <link rel="stylesheet" href="../public/css/navbar-style.css">
-        <link rel="stylesheet" href="../public/css/restaurante-login-style.css">
+        <link rel="stylesheet" href="http://localhost/sf/public/css/navbar-style.css">
+        <link rel="stylesheet" href="http://localhost/sf/public/css/restaurante-login-style.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,7 +40,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.0/sweetalert2.all.js"></script>
     </head>
     <style>
-        body{background:url('../public/img/bg/bg-login.jpg')no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+        body{background:url('http://localhost/sf/public/img/bg/bg-login.jpg')no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
     </style>
     <body>
         <?php include 'app/views/templates/navbar.php' ?>
@@ -75,19 +83,31 @@
         </div>
 
         <!--JS files-->
-        <script src="../public/js/popper.js"></script>
-        <script src="../public/js/bootstrap.js"></script>
-        <script src="../public/js/valida-login.js"></script>
-        
-        <?php if ($route->Link == "error") { ?>
-            <script type='text/javascript'>
-                swal({
-                    type: 'error',
-                    showConfirmButton: false,
-                    title: 'ERRO',
-                    timer: 12000,
-                })
-            </script>
+        <script src="http://localhost/sf/public/js/popper.js"></script>
+        <script src="http://localhost/sf/public/js/bootstrap.js"></script>
+        <script src="http://localhost/sf/public/js/valida-login.js"></script>
+
+        <?php if (isset($route->Link)) { ?>
+            <?php $msg = $route->Link; ?>
+            <?php if ($msg == "email-ou-senha-incorretos") { ?>
+                <script type='text/javascript'>
+                    swal({
+                        type: 'error',
+                        showConfirmButton: false,
+                        title: 'Email ou Senha Incorretos!',
+                        timer: 8000,
+                    })
+                </script>
+            <?php } else if ($msg == "usuario-nao-autenticado") { ?>
+                <script type='text/javascript'>
+                    swal({
+                        type: 'error',
+                        showConfirmButton: false,
+                        title: 'Usuário não Autenticado!',
+                        timer: 8000,
+                    })
+                </script>
+            <?php } ?>
         <?php } ?>
     </body>
 </html>
