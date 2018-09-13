@@ -1,3 +1,7 @@
+<?php 
+    // use app\Controllers\RestaurantController;
+    // $restaurant = new RestaurantController();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>

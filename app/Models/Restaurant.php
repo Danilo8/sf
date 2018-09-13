@@ -1,16 +1,8 @@
 <?php
 
-namespace Models;
+namespace app\Models;
 
-// if ($route->Path == null) {
-//     require_once '../../database/DB/DB_connection.php';
-// } else {
-//     require_once 'database/DB/DB_connection.php';
-// }
-
-require_once '../../database/DB/DB_connection.php';
-
-use DB\DB_connection;
+use database\DB\DB_connection;
 
 class Restaurant
 {

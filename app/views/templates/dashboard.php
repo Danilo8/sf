@@ -1,3 +1,16 @@
+<?php 
+     use app\Controllers\RestaurantController;
+
+     $restaurant = new RestaurantController();
+
+     if(!isset($_SESSION['restaurant'])){
+        $restaurant->redirect('http://localhost/sf/restaurante/login/usuario-nao-autenticado');
+     }
+
+    //  if(isset($route->Link) && $route->Link == 'logout'){
+    //     $session->close_session('restaurant');
+    //  }
+?>
 <!--Estrutura do Template-->
 <nav class="navbar navbar-dark bg-dark">
     <span class="navbar-brand mb-0 h1 mr-0">

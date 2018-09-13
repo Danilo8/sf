@@ -1,27 +1,19 @@
 <?php
 
-namespace Controllers;
+namespace app\Controllers;
 
-// if ($route->Path == null) {
-//     require_once '../Models/Restaurant.php';
-// }
+require_once ('C:\xampp\htdocs\sf\autoload.php');
 
-require_once '../Models/Restaurant.php';
-require_once 'SessionController.php';
-
-use Controllers\SessionController;
-use Models\Restaurant;
+use app\Models\Restaurant;
 
 class RestaurantController
 {
     
     private $model;
-    private $controller;
 
     public function __construct()
     {
         $this->model = new Restaurant();
-        $this->controller = new SessionController();
 
         if (isset($_POST)) {
             switch ($_POST['action']) {
@@ -57,8 +49,10 @@ class RestaurantController
         if (!$auth) {
             $this->redirect('http://localhost/sf/restaurante/login/email-ou-senha-invalidos');
         } else {
+            session_start();
             $row = $auth->fetch_assoc();
-            $this->controller->start_session('restaurant', $row['id']);
+            $_SESSION['restaurant'] = $row['id'];
+            $this->redirect('http://localhost/sf/restaurante/dashboard');
         }
     }
 
@@ -70,5 +64,4 @@ class RestaurantController
         header('Location: ' . $to);
     }
 }
-
-$class = new RestaurantController();
+$controller = new RestaurantController();

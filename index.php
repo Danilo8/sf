@@ -1,13 +1,13 @@
 <?php
 
-// require('routes/Routes.class.php');
+define('WWW_ROOT', dirname(__FILE__));
+define('DS', DIRECTORY_SEPARATOR);
 define('REQ', "app" . DIRECTORY_SEPARATOR);
 
-function __autoload($class)
-{
-    
-}
+require_once (dirname(__FILE__) . DS . 'autoload.php');
+
 use routes\Routes;
+
 $route = new Routes();
 
 //var_dump($route);
