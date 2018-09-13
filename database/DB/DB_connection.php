@@ -4,11 +4,13 @@ namespace DB;
 
 //Busca o arquivo settings.php na pasta config
 
-if ($route->Path == null) {
-    require_once '../../config/settings.php';
-} else {
-    require_once 'config/settings.php';
-}
+// if ($route->Path == null) {
+//     require_once '../../config/settings.php';
+// } else {
+//     require_once 'config/settings.php';
+// }
+
+require_once '../../config/settings.php';
 
 class DB_connection {
 

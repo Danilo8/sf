@@ -1,20 +1,3 @@
-<?php 
-     require_once 'app/Controllers/SessionController.php';
-    //  require_once 'app/Controllers/RestaurantController.php';
-
-     use Controllers\SessionController;
-
-     $session = new SessionController();
-
-     if(!isset($_SESSION['restaurant'])){
-         $session->redirect('http://localhost/sf/restaurante/login/usuario-nao-autenticado');
-     }
-
-     if(isset($route->Link) && $route->Link == 'logout'){
-        $session->close_session('restaurant');
-     }
-?>
-
 <!--Estrutura do Template-->
 <nav class="navbar navbar-dark bg-dark">
     <span class="navbar-brand mb-0 h1 mr-0">

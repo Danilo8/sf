@@ -89,12 +89,12 @@
 
         <?php if (isset($route->Link)) { ?>
             <?php $msg = $route->Link; ?>
-            <?php if ($msg == "email-ou-senha-incorretos") { ?>
+            <?php if ($msg == "email-ou-senha-invalidos") { ?>
                 <script type='text/javascript'>
                     swal({
                         type: 'error',
                         showConfirmButton: false,
-                        title: 'Email ou Senha Incorretos!',
+                        title: 'Email ou Senha Inválidos!',
                         timer: 8000,
                     })
                 </script>

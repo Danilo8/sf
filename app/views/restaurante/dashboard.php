@@ -1,3 +1,19 @@
+<?php 
+     require_once 'app/Controllers/SessionController.php';
+     require_once 'app/Controllers/Controller.php';
+
+     use Controllers\SessionController;
+
+     $session = new SessionController();
+
+     if(!isset($_SESSION['restaurant'])){
+        $session->redirect('http://localhost/sf/restaurante/login/usuario-nao-autenticado');
+     }
+
+     if(isset($route->Link) && $route->Link == 'logout'){
+        $session->close_session('restaurant');
+     }
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>

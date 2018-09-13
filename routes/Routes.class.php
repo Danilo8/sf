@@ -5,6 +5,9 @@
  * incluindo numeros de paginação, pastas, arquivos e links
  * ------------------------------------------------------------
  */
+
+ namespace routes;
+
 class Routes
 {
     public $Local;
@@ -37,7 +40,7 @@ class Routes
             if (!file_exists(REQ . '/views/' . end($this->Local) . '.php')) {
                 
                 // Verifica se o arquivo PHP do indice [0] não existe
-                if (!file_exists(REQ . '/views/' . $this->Local[0]. '.php')) {
+                if (!file_exists('app' . '/views/' . $this->Local[0]. '.php')) {
                     
                     // Verifica se o indice [1] do Local foi setado ou não esta vazio
                     if (isset($this->Local[1]) && !empty($this->Local[1])) {
@@ -99,10 +102,10 @@ class Routes
             if ($this->Local[0] != '404') {
                 $this->File = 'home';
                 $this->Link = (isset($this->Local[0]) ? $this->Local : null);
-            } else {
-                $this->File = 'error/404';
-                $this->Link = null;
-            }
+            }// else {
+            //     $this->File = 'error/404';
+            //     $this->Link = null;
+            // }
             
         }
 

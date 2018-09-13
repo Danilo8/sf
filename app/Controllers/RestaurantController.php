@@ -2,11 +2,11 @@
 
 namespace Controllers;
 
-if ($route->Path == null) {
-    require_once '../Models/Restaurant.php';
-} else {
-    require_once 'app/Models/Restaurant.php';
-}
+// if ($route->Path == null) {
+//     require_once '../Models/Restaurant.php';
+// }
+
+require_once '../Models/Restaurant.php';
 require_once 'SessionController.php';
 
 use Controllers\SessionController;
@@ -55,7 +55,7 @@ class RestaurantController
         $auth = $this->model->Auth($_POST['email'], $_POST['password']);
 
         if (!$auth) {
-            $this->redirect('http://localhost/sf/restaurante/login/email-ou-senha-incorretos');
+            $this->redirect('http://localhost/sf/restaurante/login/email-ou-senha-invalidos');
         } else {
             $row = $auth->fetch_assoc();
             $this->controller->start_session('restaurant', $row['id']);

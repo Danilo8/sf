@@ -1,9 +1,13 @@
 <?php
 
-require('routes/Routes.class.php');
-
+// require('routes/Routes.class.php');
 define('REQ', "app" . DIRECTORY_SEPARATOR);
 
+function __autoload($class)
+{
+    
+}
+use routes\Routes;
 $route = new Routes();
 
 //var_dump($route);

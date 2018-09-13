@@ -18,6 +18,7 @@
 
         <!--CSS files-->
         <link rel="stylesheet" href="public/css/navbar-style.css">
+        <link rel="stylesheet" href="public/css/home-style.css">
         <link rel="stylesheet" href="public/css/footer-style.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
@@ -28,9 +29,11 @@
         <!--fa fa-icons-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+    
     <body>
         <?php include 'templates/navbar.php' ?>
-        <h1 class="text-center mt-5">Home</h1>
+        
+        
 
         <?php include 'templates/footer.php'?>
 

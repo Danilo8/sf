@@ -28,9 +28,17 @@
         <!--fa fa-icons-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+    <style>
+        .conatiner-fluid{background:url('http://localhost/sf/public/img/bg/bg-login.jpg')no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+    </style>
     <body>
         <?php include 'templates/navbar.php' ?>
-        <h1 class="text-center mt-5">Contato</h1>
+        
+        <div class="conatiner-fluid">
+            <h2 class="text-center pt-5">
+                Entrar em Contato
+            </h2>
+        </div>
 
         <?php include 'templates/footer.php'?>
 
