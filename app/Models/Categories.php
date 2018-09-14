@@ -16,7 +16,16 @@ class Categories
 
     public function Insert($values)
     {
+        $sql =  "INSERT INTO `categories` (`id`, `restaurant_id`, `category_name`)" .
+                "VALUES (NULL, '" . $values['restaurant_id'] . "', '" . $values['category_name'] . "')";
         
+        $stmt = $this->DB->prepare($sql);
+        $result = $stmt->execute();
+        if (!$result) {
+            return false;
+        } else {
+            return mysqli_stmt_insert_id($stmt);
+        }
     }
 
     public function Select($id)

@@ -10,12 +10,12 @@ class RegisterController
 {
     
     private $model;
-    private $session;
+    private $restaurant;
 
     public function __construct()
     {
         $this->model = new Restaurant();
-        $this->session = new RestaurantController();
+        $this->restaurant = new RestaurantController();
 
         if (isset($_POST)) {
             switch ($_POST['action']) {
@@ -52,7 +52,7 @@ class RegisterController
             $this->redirect('http://localhost/sf/restaurante/login/email-ou-senha-invalidos');            
         } else {
             $row = $auth->fetch_assoc();
-            $this->session->start_session('restaurant', $row['id']);
+            $this->restaurant->start_session('restaurant', $row['id']);
         }
     }
 

@@ -3,7 +3,7 @@
      use app\Controllers\CategoriesController;
 
      $restaurant = new RestaurantController();
-     $categories = new CategoriesController();
+     $category = new CategoriesController();
 
      if(!isset($_SESSION['restaurant'])){
         $restaurant->redirect('http://localhost/sf/restaurante/login/usuario-nao-autenticado');

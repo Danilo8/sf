@@ -4,21 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Cardápio | Search Food</title>
+        <title>Cardápio</title>
 
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
         <!--Favicon-->
-        <link rel="shortcut icon" href="../public/img/icon/SF.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="http://localhost/sf/public/img/icon/SF.ico" type="image/x-icon">
 
         <!--cdn Bootstrap CSS file-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
         <!--CSS files-->
-        <link rel="stylesheet" href="../public/css/navbar-style.css">
-        <link rel="stylesheet" href="../public/css/dashboard-template.css">
+        <link rel="stylesheet" href="http://localhost/sf/public/css/navbar-style.css">
+        <link rel="stylesheet" href="http://localhost/sf/public/css/dashboard-template.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -36,38 +36,96 @@
 
         <div class="container mt-5">
             <div class="row">
-                <div class="col-4">
+                <div class="col-4 mb-5">
                     <div class="card">
                         <div class="card-header">
-                            <span>CATEGORIA</span>
+                            <span>CATEGORIAS</span>
                             <button type="button" data-toggle="modal" data-target="#categoriaModal" data-tooltip="tooltip" data-placement="top" title="ADICIONAR CATEGORIA" style="float: right" class="btn btn-sm btn-success">
                                 <i class="fa fa-plus-circle"></i>
                             </button>
-                        </div>
-                        <div class="card-body">
-                            <?php if ($categories->Select($_SESSION['restaurant'])) { ?>
-                                Sim
-                            <?php } else { ?>
-                                <p class="text-center text">
-                                    Não
+                        </div>                        
+                        <?php if ($category->Select($_SESSION['restaurant'])) { ?>
+                            <div class="card-body p-0">
+                                <?php $categories = $category->Select($_SESSION['restaurant']); ?>
+                                <div class="list-group" id="list-tab" role="tablist">
+                                    <?php for ($i=0; $i < mysqli_num_rows($categories); $i++) { ?>
+                                        <?php $row_category = mysqli_fetch_assoc($categories); ?>
+                                        <?php if($i == 0) {?>
+                                            <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" href="#<?= $row_category['id'] ?>" data-toggle="list" role="tab" aria-controls="<?= $row_category['category_name'] ?>">
+                                                <?= $row_category['category_name'] ?>
+                                                <span class="badge badge-danger badge-pill">
+                                                    0
+                                                </span>                                                
+                                            </a>
+                                        <?php } else { ?>
+                                            <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center " href="#<?= $row_category['id'] ?>" data-toggle="list" role="tab" aria-controls="<?= $row_category['category_name'] ?>">
+                                                <?= $row_category['category_name'] ?>
+                                                <span class="badge badge-danger badge-pill">
+                                                    0
+                                                </span>                                                
+                                            </a>
+                                        <?php } ?>
+                                    <?php } ?>  
+                                </div>
+                            </div>
+                        <?php } else { ?>
+                            <div class="card-body">
+                                <p class="text-center text-muted mb-0">
+                                    "Não há nenhuma Categoria cadastrada.
+                                    Click do icone <i class="fa fa-plus-circle"></i>
+                                    para adicionar uma nova Categoria."
                                 </p>
-                            <?php } ?>                             
-                        </div>
+                            </div>
+                        <?php } ?>                                                     
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            <span>CATEGORIA</span>
-                            <button data-toggle="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success">
-                                <i class="fa fa-plus-circle"></i>
-                                ADICIONAR ITEM
-                            </button>
-                        </div>
-                        <div class="card-body">
-
-                        </div>
-                    </div>
+                    <div class="tab-content" id="nav-tabContent">
+                        <?php if ($category->Select($_SESSION['restaurant'])) { ?>
+                            <?php $categories = $category->Select($_SESSION['restaurant']); ?> 
+                            <?php for ($i=0; $i < mysqli_num_rows($categories); $i++) { ?>
+                                <?php $row_category = mysqli_fetch_assoc($categories); ?>
+                                <?php if($i == 0) {?>
+                                    <div class="tab-pane fade show active" id="<?= $row_category['id'] ?>" role="tabpanel" aria-labelledby="list-home-list">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <button class="btn btn-sm p-0 text-success" style="background-color: transparent">
+                                                    <i style="font-size: 22px" class="fa fa-pencil"></i>
+                                                </button>
+                                                <span style="color: black"><?= $row_category['category_name'] ?></span>
+                                                <button data-toggle="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success">
+                                                    <i class="fa fa-plus-circle"></i>
+                                                    ADICIONAR ITEM
+                                                </button>
+                                            </div>
+                                            <div class="card-body">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="tab-pane fade" id="<?= $row_category['id'] ?>" role="tabpanel" aria-labelledby="list-home-list">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <button class="btn btn-sm p-0 text-success" style="background-color: transparent">
+                                                    <i style="font-size: 22px" class="fa fa-pencil"></i>
+                                                </button>
+                                                <span style="color: black"><?= $row_category['category_name'] ?></span>
+                                                <button data-toggle="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success">
+                                                    <i class="fa fa-plus-circle"></i>
+                                                    ADICIONAR ITEM
+                                                </button>
+                                            </div>
+                                            <div class="card-body">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } ?>                                 
+                            <?php } ?>                                 
+                            </div>
+                        <?php } ?>                        
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -77,18 +135,25 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">ADICIONAR CATEGORIA</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                    <form action="" method="post">
+                        <div class="modal-body">                        
+                            <div class="form-group">
+                                <div class="label">Nome da Categoria:</div>
+                                <input type="text" name="category_name" id="category_name" class="form-control" placeholder="Nome da Categoria" required>
+                                <input type="hidden" name="<?= md5('category_action')?>" value="<?= md5('register_category')?>">
+                                <input type="hidden" name="restaurant_id" value="<?= $_SESSION['restaurant'] ?>">
+                            </div>                        
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">ADICIONAR</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -103,5 +168,37 @@
                 $('[data-tooltip="tooltip"]').tooltip()
             });
         </script>
+
+        <?php if (isset($route->Link)) { ?>
+            <?php $msg = $route->Link; ?>
+            <?php if ($msg == "categoria-adicionada-com-sucesso") { ?>
+                <script type='text/javascript'>
+                    swal({
+                        type: 'success',
+                        showConfirmButton: false,
+                        title: 'Categoria adicionada com sucesso!',
+                        timer: 8000,
+                    })
+                </script>
+            <?php } else if ($msg == "erro-ao-adicionada-categoria") { ?>
+                <script type='text/javascript'>
+                    swal({
+                        type: 'error',
+                        showConfirmButton: false,
+                        title: 'Erro ao adicionar categoria!',
+                        timer: 8000,
+                    })
+                </script>
+            <?php } else if ($msg == "categoria-ja-existe") { ?>
+                <script type='text/javascript'>
+                    swal({
+                        type: 'error',
+                        showConfirmButton: false,
+                        title: 'Essa categoria já existe!',
+                        timer: 8000,
+                    })
+                </script>
+            <?php } ?>
+        <?php } ?>
     </body>
 </html>

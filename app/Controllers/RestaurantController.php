@@ -44,4 +44,3 @@ class RestaurantController
         header('Location: ' . $to);
     }
 }
-//$class = new \Controllers\SessionController();
