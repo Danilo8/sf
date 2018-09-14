@@ -1,14 +1,16 @@
 <?php 
      use app\Controllers\RestaurantController;
+     use app\Controllers\CategoriesController;
 
-     $controller = new RestaurantController();
+     $restaurant = new RestaurantController();
+     $categories = new CategoriesController();
 
      if(!isset($_SESSION['restaurant'])){
-        $controller->redirect('http://localhost/sf/restaurante/login/usuario-nao-autenticado');
+        $restaurant->redirect('http://localhost/sf/restaurante/login/usuario-nao-autenticado');
      }
 
      if(isset($route->Link) && $route->Link == 'logout'){
-        $controller->close_session('restaurant');
+        $restaurant->close_session('restaurant');
      }
 ?>
 <!--Estrutura do Template-->
@@ -19,7 +21,7 @@
     </span>
     <ul class="nav justify-content-center">
         <h3 class="text-white">
-            <?= $controller->Select('restaurant_name'); ?>
+            <?= $restaurant->Select('restaurant_name'); ?>
         </h3>
     </ul>
     <ul class="nav justify-content-end">

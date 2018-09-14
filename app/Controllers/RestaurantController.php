@@ -37,7 +37,6 @@ class RestaurantController
         $row = $result->fetch_assoc();
 
         return $row["$col"];
-        // echo "AQUI";
     }
 
     public function redirect($to)

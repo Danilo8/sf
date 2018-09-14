@@ -45,7 +45,13 @@
                             </button>
                         </div>
                         <div class="card-body">
-                            
+                            <?php if ($categories->Select($_SESSION['restaurant'])) { ?>
+                                Sim
+                            <?php } else { ?>
+                                <p class="text-center text">
+                                    Não
+                                </p>
+                            <?php } ?>                             
                         </div>
                     </div>
                 </div>
