@@ -29,9 +29,13 @@ class Restaurant
         }
     }
 
-    public function Select()
+    public function Select($id)
     {
-        
+        $sql = "SELECT * FROM restaurants WHERE id = '1'";
+
+        $result = mysqli_query($this->DB, $sql);
+
+        return $result;  
     }
 
     public function Update($id)

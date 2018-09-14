@@ -2,75 +2,47 @@
 
 namespace app\Controllers;
 
-require_once ('C:\xampp\htdocs\sf\autoload.php');
-
-// if (isset($_GET['set'])) {
-//     $controller = new RestaurantController();
-// }
-
 use app\Models\Restaurant;
 
 class RestaurantController
 {
-    
     private $model;
 
     public function __construct()
     {
+        session_start();
         $this->model = new Restaurant();
-
-        if (isset($_POST)) {
-            switch ($_POST['action']) {
-                case 'cadastrar':
-                    $this->cadastrar();
-                    break;
-
-                case 'logar':
-                    $this->logar();
-                    break;
-                
-                default:
-                    $this->redirect('http://localhost/sf/404');
-                    break;
-            }
-        }
     }
 
-    public function cadastrar()
+    public function start_session($session, $id)
     {
-        if ($this->model->Insert($_POST)) {
-            $this->redirect('http://localhost/sf/restaurante/login/cadastro-sucesso');
-        } else {
-            $this->redirect('http://localhost/sf/restaurante/cadastro/');
-        }
-        
-    }
-
-    public function logar()
-    {     
-        $auth = $this->model->Auth($_POST['email'], $_POST['password']);
-
-        if (!$auth) {
-            $this->redirect('http://localhost/sf/restaurante/login/email-ou-senha-invalidos');            
-        } else {
-            session_start();
-            $row = $auth->fetch_assoc();
-            $_SESSION['restaurant'] = $row['id'];
+        if ($session == 'restaurant') {
+            $_SESSION['restaurant'] = $id;
             $this->redirect('http://localhost/sf/restaurante/dashboard');
         }
     }
 
-    public function teste()
+    public function close_session($session)
     {
-        echo "OI";
+        session_destroy();
+        if ($session == 'restaurant') {
+            $this->redirect('http://localhost/sf/restaurante/login');
+        } 
     }
 
-    /**
-     * 
-     */
+    public function Select($col)
+    {
+        $result = $this->model->Select($_SESSION['restaurant']);
+
+        $row = $result->fetch_assoc();
+
+        return $row["$col"];
+        // echo "AQUI";
+    }
+
     public function redirect($to)
     {
         header('Location: ' . $to);
     }
 }
-$controller = new RestaurantController();
+//$class = new \Controllers\SessionController();

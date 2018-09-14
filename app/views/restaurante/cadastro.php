@@ -54,7 +54,7 @@
         <div id="container" class="container mb-4">
             <div class="card mx-5">
                 <div class="card-body">
-                    <form id="form-cadastro" action="http://localhost/sf/app/Controllers/RestaurantController.php" method="post">
+                    <form id="form-cadastro" action="http://localhost/sf/app/Controllers/RegisterController.php" method="post">
                         <h3 class="text-center mb-3">Complete todas as etapas</h3>
                         <div class="mx-5 px-5">                            
                             <div class="steps">                            

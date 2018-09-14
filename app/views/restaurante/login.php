@@ -50,7 +50,7 @@
                     <div class="text-center mt-4">
                         <a href="cadastro">Cadastrar meu Restaurante</a>
                     </div>
-                    <form id="form-login" class="mx-4" action="http://localhost/sf/app/Controllers/RestaurantController.php?set=true" method="post">
+                    <form id="form-login" class="mx-4" action="http://localhost/sf/app/Controllers/RegisterController.php" method="post">
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" name="email" id="email" class="form-control" placeholder="Email">
