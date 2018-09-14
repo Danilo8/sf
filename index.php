@@ -1,10 +1,10 @@
 <?php
 
-define('WWW_ROOT', dirname(__FILE__));
-define('DS', DIRECTORY_SEPARATOR);
+// define('WWW_ROOT', dirname(__FILE__));
+// define('DS', DIRECTORY_SEPARATOR);
 define('REQ', "app" . DIRECTORY_SEPARATOR);
 
-require_once (dirname(__FILE__) . DS . 'autoload.php');
+require_once (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'autoload.php');
 
 use routes\Routes;
 

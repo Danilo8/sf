@@ -4,6 +4,10 @@ namespace app\Controllers;
 
 require_once ('C:\xampp\htdocs\sf\autoload.php');
 
+// if (isset($_GET['set'])) {
+//     $controller = new RestaurantController();
+// }
+
 use app\Models\Restaurant;
 
 class RestaurantController
@@ -47,13 +51,18 @@ class RestaurantController
         $auth = $this->model->Auth($_POST['email'], $_POST['password']);
 
         if (!$auth) {
-            $this->redirect('http://localhost/sf/restaurante/login/email-ou-senha-invalidos');
+            $this->redirect('http://localhost/sf/restaurante/login/email-ou-senha-invalidos');            
         } else {
             session_start();
             $row = $auth->fetch_assoc();
             $_SESSION['restaurant'] = $row['id'];
             $this->redirect('http://localhost/sf/restaurante/dashboard');
         }
+    }
+
+    public function teste()
+    {
+        echo "OI";
     }
 
     /**

@@ -1,11 +1,11 @@
 <?php 
      use app\Controllers\RestaurantController;
 
-     $restaurant = new RestaurantController();
+    //  $restaurant = new RestaurantController();
 
-     if(!isset($_SESSION['restaurant'])){
-        $restaurant->redirect('http://localhost/sf/restaurante/login/usuario-nao-autenticado');
-     }
+    //  if(!isset($_SESSION['restaurant'])){
+    //     $restaurant->redirect('http://localhost/sf/restaurante/login/usuario-nao-autenticado');
+    //  }
 
     //  if(isset($route->Link) && $route->Link == 'logout'){
     //     $session->close_session('restaurant');
@@ -19,7 +19,7 @@
     </span>
     <ul class="nav justify-content-center">
         <h3 class="text-white">
-            
+            <?php app\Controllers\RestaurantController::teste();?>
         </h3>
     </ul>
     <ul class="nav justify-content-end">

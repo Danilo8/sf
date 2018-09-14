@@ -2,7 +2,7 @@
 
 function __autoload($class)
 {
-    $class =  str_replace('\\', DS , $class) . '.php';
+    $class = dirname(__FILE__) . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR , $class) . '.php';
     
     if (!file_exists($class)) {
         throw new Exception("File path '{$class}' not found.");
