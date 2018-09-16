@@ -89,7 +89,7 @@
                                     <div class="tab-pane fade show active" id="<?= $row_category['id'] ?>" role="tabpanel" aria-labelledby="list-home-list">
                                         <div class="card">
                                             <div class="card-header">
-                                                <button class="btn btn-sm p-0 text-success" style="background-color: transparent">
+                                                <button type="button" data-toggle="modal" data-target="#categoriaEditarModal" data-tooltip="tooltip" data-placement="top" title="EDITAR CATEGORIA" class="btn btn-sm p-0 text-success" style="background-color: transparent">
                                                     <i style="font-size: 22px" class="fa fa-pencil"></i>
                                                 </button>
                                                 <span style="color: black"><?= $row_category['category_name'] ?></span>
@@ -107,7 +107,7 @@
                                     <div class="tab-pane fade" id="<?= $row_category['id'] ?>" role="tabpanel" aria-labelledby="list-home-list">
                                         <div class="card">
                                             <div class="card-header">
-                                                <button class="btn btn-sm p-0 text-success" style="background-color: transparent">
+                                                <button type="button" data-toggle="modal" data-target="#categoriaEditarModal" data-tooltip="tooltip" data-placement="top" title="EDITAR CATEGORIA" class="btn btn-sm p-0 text-success" style="background-color: transparent">
                                                     <i style="font-size: 22px" class="fa fa-pencil"></i>
                                                 </button>
                                                 <span style="color: black"><?= $row_category['category_name'] ?></span>
@@ -131,11 +131,11 @@
         </div>
 
         <!-- Modal para cadastrar Categorias -->
-        <div class="modal fade" id="categoriaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="categoriaModal" tabindex="-1" role="dialog" aria-labelledby="categoriaModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">ADICIONAR CATEGORIA</h5>
+                        <h5 class="modal-title" id="categoriaModalLabel">ADICIONAR CATEGORIA</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -150,8 +150,36 @@
                             </div>                        
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
                             <button type="submit" class="btn btn-success">ADICIONAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal para Editar Categorias -->
+        <div class="modal fade" id="categoriaEditarModal" tabindex="-1" role="dialog" aria-labelledby="categoriaEditarModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="categoriaEditarModalLabel">EDITAR CATEGORIA</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="" method="post">
+                        <div class="modal-body">                        
+                            <div class="form-group">
+                                <div class="label">Nome da Categoria:</div>
+                                <input type="text" name="category_name" id="category_name" class="form-control" placeholder="Nome da Categoria" required value="">
+                                <input type="hidden" name="<?= md5('category_action')?>" value="<?= md5('update_category')?>">
+                                <input type="hidden" name="restaurant_id" value="<?= $_SESSION['restaurant'] ?>">
+                            </div>                        
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+                            <button type="submit" class="btn btn-success">SALVAR</button>
                         </div>
                     </form>
                 </div>

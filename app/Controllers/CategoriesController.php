@@ -58,6 +58,11 @@ class CategoriesController
         }
     }
 
+    public function Update()
+    {
+        
+    }
+
     public function redirect($to)
     {
         header('Location: ' . $to);

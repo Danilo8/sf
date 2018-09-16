@@ -40,4 +40,9 @@ class Categories
             return false;
         }
     }
+
+    public function Update($id, $values)
+    {
+        # code...
+    }
 }
