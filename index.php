@@ -1,7 +1,7 @@
 <?php
 
 define('REQ', "app" . DIRECTORY_SEPARATOR);
-define('DOMINIO', 'localhost/sf');
+define('DOMINIO', 'localhost/searchfood');
 
 require_once (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'autoload.php');
 

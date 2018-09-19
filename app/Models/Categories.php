@@ -43,6 +43,6 @@ class Categories
 
     public function Update($id, $values)
     {
-        # code...
+        // $sql 
     }
 }
