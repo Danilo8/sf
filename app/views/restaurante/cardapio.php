@@ -11,14 +11,14 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
         <!--Favicon-->
-        <link rel="shortcut icon" href="http://localhost/sf/public/img/icon/SF.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="http://<?=DOMINIO?>/public/img/icon/SF.ico" type="image/x-icon">
 
         <!--cdn Bootstrap CSS file-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
         <!--CSS files-->
-        <link rel="stylesheet" href="http://localhost/sf/public/css/navbar-style.css">
-        <link rel="stylesheet" href="http://localhost/sf/public/css/dashboard-template.css">
+        <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/navbar-style.css">
+        <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/dashboard-template.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -89,7 +89,7 @@
                                     <div class="tab-pane fade show active" id="<?= $row_category['id'] ?>" role="tabpanel" aria-labelledby="list-home-list">
                                         <div class="card">
                                             <div class="card-header">
-                                                <button type="button" data-toggle="modal" data-target="#categoriaEditarModal" data-tooltip="tooltip" data-placement="top" title="EDITAR CATEGORIA" class="btn btn-sm p-0 text-success" style="background-color: transparent">
+                                                <button type="button" data-toggle="modal" data-target="#categoriaEditarModal" data-tooltip="tooltip" data-placement="top" title="EDITAR CATEGORIA" class="btn btn-sm p-0 text-success" style="background-color: transparent" data-category-id="<?= $row_category['category_id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
                                                     <i style="font-size: 22px" class="fa fa-pencil"></i>
                                                 </button>
                                                 <span style="color: black"><?= $row_category['category_name'] ?></span>
@@ -107,7 +107,7 @@
                                     <div class="tab-pane fade" id="<?= $row_category['id'] ?>" role="tabpanel" aria-labelledby="list-home-list">
                                         <div class="card">
                                             <div class="card-header">
-                                                <button type="button" data-toggle="modal" data-target="#categoriaEditarModal" data-tooltip="tooltip" data-placement="top" title="EDITAR CATEGORIA" class="btn btn-sm p-0 text-success" style="background-color: transparent">
+                                                <button type="button" data-toggle="modal" data-target="#categoriaEditarModal" data-tooltip="tooltip" data-placement="top" title="EDITAR CATEGORIA" class="btn btn-sm p-0 text-success" style="background-color: transparent" data-category-id="<?= $row_category['category_id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
                                                     <i style="font-size: 22px" class="fa fa-pencil"></i>
                                                 </button>
                                                 <span style="color: black"><?= $row_category['category_name'] ?></span>
@@ -168,12 +168,13 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="" method="post">
+                    <form action="http://<?=DOMINIO?>/restaurante/cardapio" method="post">
                         <div class="modal-body">                        
                             <div class="form-group">
                                 <div class="label">Nome da Categoria:</div>
                                 <input type="text" name="category_name" id="category_name" class="form-control" placeholder="Nome da Categoria" required value="">
                                 <input type="hidden" name="<?= md5('category_action')?>" value="<?= md5('update_category')?>">
+                                <input type="hidden" name="category_id" id="category_id" value="">
                                 <input type="hidden" name="restaurant_id" value="<?= $_SESSION['restaurant'] ?>">
                             </div>                        
                         </div>
@@ -187,14 +188,23 @@
         </div>
 
         <!--JS files-->
-        <script src="http://localhost/sf/public/js/popper.js"></script>
-        <script src="http://localhost/sf/public/js/bootstrap.js"></script>
-        <script src="http://localhost/sf/public/js/valida-login.js"></script>
+        <script src="http://<?=DOMINIO?>/public/js/popper.js"></script>
+        <script src="http://<?=DOMINIO?>/public/js/bootstrap.js"></script>
+        <script src="http://<?=DOMINIO?>/public/js/valida-login.js"></script>
         <script type="text/javascript">
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip()
                 $('[data-tooltip="tooltip"]').tooltip()
             });
+            $('#categoriaEditarModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget) 
+                var category_id = button.data('category-id') 
+                var category_name = button.data('category-name') 
+                
+                var modal = $(this)
+                modal.find('#category_name').val(category_name)
+                modal.find('#category_id').val(category_id)
+            })
         </script>
 
         <?php if (isset($route->Link)) { ?>

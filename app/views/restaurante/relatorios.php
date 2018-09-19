@@ -11,14 +11,14 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
         <!--Favicon-->
-        <link rel="shortcut icon" href="../public/img/icon/SF.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="http://<?=DOMINIO?>/public/img/icon/SF.ico" type="image/x-icon">
 
         <!--cdn Bootstrap CSS file-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
         <!--CSS files-->
-        <link rel="stylesheet" href="../public/css/navbar-style.css">
-        <link rel="stylesheet" href="../public/css/dashboard-template.css">
+        <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/navbar-style.css">
+        <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/dashboard-template.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -15,15 +15,15 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
         <!--Favicon-->
-        <link rel="shortcut icon" href="http://localhost/sf/public/img/icon/SF.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="http://<?=DOMINIO?>/public/img/icon/SF.ico" type="image/x-icon">
 
         <!--cdn Bootstrap CSS file-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
         <!--CSS files-->
-        <link rel="stylesheet" href="http://localhost/sf/public/css/navbar-style.css">
-        <link rel="stylesheet" href="http://localhost/sf/public/css/footer-style.css">
-        <link rel="stylesheet" href="http://localhost/sf/public/css/restaurante-cadastro-style.css">
+        <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/navbar-style.css">
+        <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/footer-style.css">
+        <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/restaurante-cadastro-style.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -36,10 +36,10 @@
         <!--Mask JS-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
-        <script src="http://localhost/sf/public/js/mask.js"></script>
+        <script src="http://<?=DOMINIO?>/public/js/mask.js"></script>
     </head>
     <style>
-        .container-fluid{background:url('http://localhost/sf/public/img/bg/bg-cadastro.jpg')no-repeat center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+        .container-fluid{background:url('http://<?=DOMINIO?>/public/img/bg/bg-cadastro.jpg')no-repeat center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
     </style>
     <body>
         <?php include 'app/views/templates/navbar.php'?>
@@ -54,7 +54,7 @@
         <div id="container" class="container mb-4">
             <div class="card mx-5">
                 <div class="card-body">
-                    <form id="form-cadastro" action="http://localhost/sf/app/Controllers/RegisterController.php" method="post">
+                    <form id="form-cadastro" action="http://<?=DOMINIO?>/app/Controllers/RegisterController.php" method="post">
                         <h3 class="text-center mb-3">Complete todas as etapas</h3>
                         <div class="mx-5 px-5">                            
                             <div class="steps">                            
@@ -204,10 +204,10 @@
         <?php include 'app/views/templates/footer.php'?>
 
         <!--JS files-->
-        <script src="http://localhost/sf/public/js/popper.js"></script>
-        <script src="http://localhost/sf/public/js/bootstrap.js"></script>
-        <script src="http://localhost/sf/public/js/writer.js"></script>
-        <script src="http://localhost/sf/public/js/valida-cadastro.js"></script>
-        <script type="text/javascript">$(document).ready(function(){$.getJSON("http://localhost/sf/public/js/estados_cidades.json",function(o){var t='<option value="">Estado</option>';$.each(o,function(o,n){t+='<option value="'+n.sigla+'">'+n.sigla+"</option>"}),$("#state").html(t),$("#state").change(function(){var t="",n="";$("#state option:selected").each(function(){n+=$(this).text()}),$.each(o,function(o,a){a.sigla==n&&$.each(a.cidades,function(o,n){t+='<option value="'+n+'">'+n+"</option>"})}),$("#city").html(t)}).change()})});</script>
+        <script src="http://<?=DOMINIO?>/public/js/popper.js"></script>
+        <script src="http://<?=DOMINIO?>/public/js/bootstrap.js"></script>
+        <script src="http://<?=DOMINIO?>/public/js/writer.js"></script>
+        <script src="http://<?=DOMINIO?>/public/js/valida-cadastro.js"></script>
+        <script type="text/javascript">$(document).ready(function(){$.getJSON("http://<?=DOMINIO?>/public/js/estados_cidades.json",function(o){var t='<option value="">Estado</option>';$.each(o,function(o,n){t+='<option value="'+n.sigla+'">'+n.sigla+"</option>"}),$("#state").html(t),$("#state").change(function(){var t="",n="";$("#state option:selected").each(function(){n+=$(this).text()}),$.each(o,function(o,a){a.sigla==n&&$.each(a.cidades,function(o,n){t+='<option value="'+n+'">'+n+"</option>"})}),$("#city").html(t)}).change()})});</script>
     </body>
 </html>

@@ -1,7 +1,7 @@
 <nav id="template-navbar" class="navbar navbar-expand-lg navbar-light">
     <?php if ($route->Path == 'restaurante') { ?>
-        <a class="navbar-brand" href="http://localhost/sf">
-            <img height="55" src="http://localhost/sf/public/img/logo/logo.png" alt="Logo">
+        <a class="navbar-brand" href="http://<?=DOMINIO?>">
+            <img height="55" src="http://<?=DOMINIO?>/public/img/logo/logo.png" alt="Logo">
             <span id="logo-text">Search Food</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,30 +14,30 @@
                         Sobre
                     </span>                                       
                     <div class="dropdown-content text-center p-1">
-                        <a class="dropdown-item" href="http://localhost/sf/sobre">Sobre o Search Food</a>
-                        <a class="dropdown-item" href="http://localhost/sf/termos">Termos de Uso</a>
-                        <a class="dropdown-item" href="http://localhost/sf/privacidade">Privacidade</a>
+                        <a class="dropdown-item" href="http://<?=DOMINIO?>/sobre">Sobre o Search Food</a>
+                        <a class="dropdown-item" href="http://<?=DOMINIO?>/termos">Termos de Uso</a>
+                        <a class="dropdown-item" href="http://<?=DOMINIO?>/privacidade">Privacidade</a>
                     </div>
                 </div>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="http://localhost/sf/contato">Contato</a>                
+                    <a class="nav-link text-white" href="http://<?=DOMINIO?>/contato">Contato</a>                
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/sf/entrar">Entrar/Cadastrar</a>
+                    <a class="nav-link" href="http://<?=DOMINIO?>/entrar">Entrar/Cadastrar</a>
                 </li>
                 <div id="donos-restaurante" class="dropdown nav-item">
                     <span style="cursor: pointer" class="nav-link active text-white">
                         Donos de Restaurante
                     </span>                                    
                     <div class="dropdown-content text-center p-1">
-                        <a class="dropdown-item" href="http://localhost/sf/restaurante/cadastro">Cadastrar Restaurante</a>
-                        <a class="dropdown-item" href="http://localhost/sf/restaurante/login">Acessar Painel</a>
+                        <a class="dropdown-item" href="http://<?=DOMINIO?>/restaurante/cadastro">Cadastrar Restaurante</a>
+                        <a class="dropdown-item" href="http://<?=DOMINIO?>/restaurante/login">Acessar Painel</a>
                     </div>
                 </div>
             </ul>
         </div>
     <?php } else { ?>
-        <a class="navbar-brand" href="http://localhost/sf">
+        <a class="navbar-brand" href="http://<?=DOMINIO?>">
             <img height="55" src="public/img/logo/logo.png" alt="Logo">
             <span id="logo-text">Search Food</span>
         </a>

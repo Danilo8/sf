@@ -38,12 +38,12 @@ class CategoriesController
         
         if (!$exist) {
             if ($this->model->Insert($_POST)) {
-                $this->redirect('http://localhost/sf/restaurante/cardapio/categoria-adicionada-com-sucesso');
+                $this->redirect(DOMINIO.'/restaurante/cardapio/categoria-adicionada-com-sucesso');
             } else {
-                $this->redirect('http://localhost/sf/restaurante/cardapio/erro-ao-adicionada-categoria');
+                $this->redirect(DOMINIO.'/restaurante/cardapio/erro-ao-adicionada-categoria');
             }
         } else {
-            $this->redirect('http://localhost/sf/restaurante/cardapio/categoria-ja-existe');
+            $this->redirect(DOMINIO.'/restaurante/cardapio/categoria-ja-existe');
         }
     }
 

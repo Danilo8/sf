@@ -1,8 +1,7 @@
 <?php
 
-// define('WWW_ROOT', dirname(__FILE__));
-// define('DS', DIRECTORY_SEPARATOR);
 define('REQ', "app" . DIRECTORY_SEPARATOR);
+define('DOMINIO', 'localhost/sf');
 
 require_once (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'autoload.php');
 

@@ -19,7 +19,7 @@
     <!--Copyright-->
     <div style="font-size: 16px;background-color: #222222" class="footer-copyright py-3 text-center ">
         © 2018 Copyright:
-        <a href="http://localhost/sf/">
+        <a href="http://<?=DOMINIO?>">
             searchfood.com.br
             <?php if ($route->Path == 'restaurante') { ?>
                 <img height="35" src="../public/img/logo/logo.png" alt="">
