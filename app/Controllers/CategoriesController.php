@@ -79,7 +79,7 @@ class CategoriesController
     {
         $menu = new MenusController();
 
-        if ($menu->Select($_SESSION['restaurant'])) {
+        if ($menu->Select($_POST['restaurant_id'])) {
             $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/categoria-possui-itens');
         } else {
             $result = $this->model->Delete($_POST['category_id']);

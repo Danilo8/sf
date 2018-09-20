@@ -67,3 +67,7 @@ body {
     display: inline;
     padding: 0;
 } */
+#category .card-body{
+    max-height: 540px;
+    overflow: auto;
+}

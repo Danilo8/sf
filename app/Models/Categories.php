@@ -58,6 +58,13 @@ class Categories
 
     public function Delete($id)
     {
-        
+        $sql = "DELETE FROM `categories` WHERE `id` = '$id'";
+        $result = mysqli_query($this->DB, $sql) or die($this->bd->error);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

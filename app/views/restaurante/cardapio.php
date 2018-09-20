@@ -19,6 +19,7 @@
         <!--CSS files-->
         <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/navbar-style.css">
         <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/dashboard-template.css">
+        <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/scrollbar.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -37,7 +38,7 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-4 mb-5">
-                    <div class="card">
+                    <div class="card" id="category">
                         <div class="card-header">
                             <span>CATEGORIAS</span>
                             <button type="button" data-toggle="modal" data-target="#categoriaModal" data-tooltip="tooltip" data-placement="top" title="ADICIONAR CATEGORIA" style="float: right" class="btn btn-sm btn-success">
@@ -45,7 +46,7 @@
                             </button>
                         </div>                        
                         <?php if ($category->Select($_SESSION['restaurant'])) { ?>
-                            <div class="card-body p-0">
+                            <div class="card-body p-0 scrollbar scrollbar-danger">
                                 <?php $categories = $category->Select($_SESSION['restaurant']); ?>
                                 <div class="list-group" id="list-tab" role="tablist">
                                     <?php for ($i=0; $i < mysqli_num_rows($categories); $i++) { ?>
@@ -58,7 +59,7 @@
                                                 </div>    
                                             
                                                 <!-- <i class="fa fa-phone"></i> -->
-                                                <span class="badge badge-danger badge-pill">
+                                                <span data-tooltip="tooltip" data-placement="right" title="0 Item" class="badge badge-danger badge-pill">
                                                     0
                                                 </span>                                                
                                             </a>
@@ -69,7 +70,7 @@
                                                     <?= $row_category['category_name'] ?>
                                                 </div>    
                                             
-                                                <span class="badge badge-danger badge-pill">
+                                                <span data-tooltip="tooltip" data-placement="right" title="0 Item" class="badge badge-danger badge-pill">
                                                     0
                                                 </span>                                                
                                             </a>
@@ -260,31 +261,16 @@
         <script src="http://<?=DOMINIO?>/public/js/popper.js"></script>
         <script src="http://<?=DOMINIO?>/public/js/bootstrap.js"></script>
         <script src="http://<?=DOMINIO?>/public/js/valida-login.js"></script>
+        <script src="http://<?=DOMINIO?>/public/js/modal.js"></script>
+        <script src="http://<?=DOMINIO?>/public/js/scrolly.js"></script>
         <script type="text/javascript">
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip()
                 $('[data-tooltip="tooltip"]').tooltip()
             });
-            $('#categoriaEditarModal').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget) 
-                var category_id = button.data('category-id') 
-                var category_name = button.data('category-name') 
-                
-                var modal = $(this)
-                modal.find('#category_name').val(category_name)
-                modal.find('#category_id').val(category_id)
-            })
-            $('#categoriaExcluirModal').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget) 
-                var category_id = button.data('category-id') 
-                var category_name = button.data('category-name') 
-                
-                var modal = $(this)
-                modal.find('#category_name').val(category_name)
-                modal.find('#category_id').val(category_id)
-            })
         </script>
 
+        <!-- Alertas -->
         <?php if (isset($route->Link)) { ?>
             <?php $msg = $route->Link; ?>
             <?php if ($msg == "categoria-adicionada-com-sucesso") { ?>
@@ -293,7 +279,7 @@
                         type: 'success',
                         showConfirmButton: false,
                         title: 'Categoria adicionada com sucesso!',
-                        timer: 8000,
+                        timer: 1500,
                     })
                 </script>
             <?php } else if ($msg == "erro-ao-adicionada-categoria") { ?>
@@ -302,7 +288,7 @@
                         type: 'error',
                         showConfirmButton: false,
                         title: 'Erro ao adicionar categoria!',
-                        timer: 8000,
+                        timer: 2000,
                     })
                 </script>
             <?php } else if ($msg == "categoria-ja-existe") { ?>
@@ -311,7 +297,7 @@
                         type: 'error',
                         showConfirmButton: false,
                         title: 'Essa categoria já existe!',
-                        timer: 8000,
+                        timer: 2000,
                     })
                 </script>
             <?php } else if ($msg == "categoria-editada-com-sucesso") { ?>
@@ -319,7 +305,34 @@
                     swal({
                         type: 'success',
                         showConfirmButton: false,
-                        title: 'Categoria Editada com Sucesso!',
+                        title: 'Categoria editada com sucesso!',
+                        timer: 1500,
+                    })
+                </script>
+            <?php } else if ($msg == "categoria-excluida-com-sucesso") { ?>
+                <script type='text/javascript'>
+                    swal({
+                        type: 'success',
+                        showConfirmButton: false,
+                        title: 'Categoria excluida com sucesso!',
+                        timer: 1500,
+                    })
+                </script>
+            <?php } else if ($msg == "categoria-possui-itens") { ?>
+                <script type='text/javascript'>
+                    swal({
+                        type: 'info',
+                        showConfirmButton: false,
+                        title: 'Essa categoria possue Itens cadastrados, você precisa remove-los antes!',
+                        timer: 5000,
+                    })
+                </script>
+            <?php } else if ($msg == "erro-ao-excluir-categoria") { ?>
+                <script type='text/javascript'>
+                    swal({
+                        type: 'error',
+                        showConfirmButton: false,
+                        title: 'Erro ao tentar excluir a categoria!',
                         timer: 1500,
                     })
                 </script>
