@@ -103,7 +103,7 @@
                                                     <i style="font-size: 22px" class="fa fa-pencil"></i>
                                                 </button>
                                                 <span style="color: black;"><?= $row_category['category_name'] ?></span>
-                                                <button data-toggle="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success">
+                                                <button data-tooltip="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#adicionarItemModal">
                                                     <i class="fa fa-plus-circle"></i>
                                                     ADICIONAR ITEM
                                                 </button>
@@ -137,7 +137,7 @@
                                                     <i style="font-size: 22px" class="fa fa-pencil"></i>
                                                 </button>
                                                 <span style="color: black;max-width: 10%" class=""><?= $row_category['category_name'] ?></span>
-                                                <button data-toggle="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success">
+                                                <button data-tooltip="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#adicionarItemModal">
                                                     <i class="fa fa-plus-circle"></i>
                                                     ADICIONAR ITEM
                                                 </button>
@@ -253,6 +253,31 @@
                             <button type="submit" class="btn btn-danger">EXCLUIR</button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Adicionar Item-->
+        <div class="modal fade" id="adicionarItemModal" tabindex="-1" role="dialog" aria-labelledby="adicionarItemModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adicionarItemModalTitle">
+                        <span style="color: black;" id="step1" class="step active ml-5 mr-5 pl-5 pr-5">PRODUTO</span>
+                        <i class="fa fa-angle-right ml-5 mr-5 pl-5 pr-5"></i>
+                        <span style="color: black;" id="step2" class="step pl-5 pr-5">VARIAÇÃO</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
                 </div>
             </div>
         </div>
