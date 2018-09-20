@@ -106,10 +106,20 @@
                                                     <i class="fa fa-plus-circle"></i>
                                                     ADICIONAR ITEM
                                                 </button>
-                                            </div>
-                                            <div class="card-body">
-                                                
-                                            </div>
+                                            </div>                                        
+                                            <?php if($menu->Select($_SESSION['restaurant'])){ ?>
+                                                <div class="card-body">
+
+                                                </div>
+                                            <?php } else { ?>
+                                                <div class="card-body">
+                                                    <p class="text-center text-muted mb-0 px-5">
+                                                        "Não há nenhum Item nessa Categoria.
+                                                        Click no botão do canto superior direito
+                                                        para adicionar um novo item nessa Categoria."                                                        
+                                                    </p>
+                                                </div>
+                                            <?php } ?>                                        
                                             <div class="card-footer text-right">
                                                 <button type="button" class="btn text-danger" style="background-color: transparent" data-toggle="modal" data-target="#categoriaExcluirModal" data-tooltip="tooltip" data-placement="bottom" title="EXCLUIR CATEGORIA" data-category-id="<?= $row_category['id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
                                                     EXCLUIR CATEGORIA
@@ -131,9 +141,18 @@
                                                     ADICIONAR ITEM
                                                 </button>
                                             </div>
-                                            <div class="card-body">
-                                                
-                                            </div>
+                                            <?php if($menu->Select($_SESSION['restaurant'])){ ?>
+                                                <div class="card-body">
+                                                </div>
+                                            <?php } else { ?>
+                                                <div class="card-body">
+                                                    <p class="text-center text-muted  mb-0 px-5">
+                                                        "Não há nenhum Item nessa Categoria.
+                                                        Click no botão do canto superior direito
+                                                        para adicionar um novo item nessa Categoria."                                                        
+                                                    </p>
+                                                </div>
+                                            <?php } ?>
                                             <div class="card-footer text-right">
                                                 <button type="button" class="btn text-danger" style="background-color: transparent" data-toggle="modal" data-target="#categoriaExcluirModal" data-tooltip="tooltip" data-placement="bottom" title="EXCLUIR CATEGORIA" data-category-id="<?= $row_category['id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
                                                     EXCLUIR CATEGORIA

@@ -29,4 +29,16 @@ class MenusController
     {
         
     }
+
+    public function Select($id)
+    {
+        $result = $this->model->Select($id);
+
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+        
+    }
 }

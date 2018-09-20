@@ -77,7 +77,20 @@ class CategoriesController
 
     public function Delete()
     {
-        
+        $menu = new MenusController();
+
+        if ($menu->Select($_SESSION['restaurant'])) {
+            $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/categoria-possui-itens');
+        } else {
+            $result = $this->model->Delete($_POST['category_id']);
+
+            if ($result) {
+                $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/categoria-excluida-com-sucesso');
+            } else {
+                $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/erro-ao-excluir-categoria');
+            }
+            
+        }
     }
 
     public function redirect($to)
