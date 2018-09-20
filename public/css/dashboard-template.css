@@ -59,3 +59,10 @@ body {
 .tab-pane {
     border-bottom: 0;
 }
+#arrows {
+    display: none;
+}
+/* .list-group .active:hover #arrows{
+    display: inline;
+    padding: 0;
+} */

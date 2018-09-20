@@ -17,7 +17,14 @@ class CategoriesController
                 case md5('register_category'):
                     $this->Insert();
                     break;
+                case md5('update_category'):
+                    $this->Update();
+                    break;
+                case md5('delete_category'):
+                    $this->Delete();
+                    break;
                 default:
+                    $this->redirect('http://'.DOMINIO.'/restaurante/cardapio');
                     break;
             }
         }
@@ -38,12 +45,12 @@ class CategoriesController
         
         if (!$exist) {
             if ($this->model->Insert($_POST)) {
-                $this->redirect(DOMINIO.'/restaurante/cardapio/categoria-adicionada-com-sucesso');
+                $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/categoria-adicionada-com-sucesso');
             } else {
-                $this->redirect(DOMINIO.'/restaurante/cardapio/erro-ao-adicionada-categoria');
+                $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/erro-ao-adicionada-categoria');
             }
         } else {
-            $this->redirect(DOMINIO.'/restaurante/cardapio/categoria-ja-existe');
+            $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/categoria-ja-existe');
         }
     }
 
@@ -59,6 +66,16 @@ class CategoriesController
     }
 
     public function Update()
+    {
+        if ($this->model->Update($_POST)) {
+            $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/categoria-editada-com-sucesso');
+        } else {
+            $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/erro-ao-editar-categoria');
+        }
+        
+    }
+
+    public function Delete()
     {
         
     }

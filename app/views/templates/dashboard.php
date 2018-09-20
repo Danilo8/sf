@@ -1,9 +1,11 @@
 <?php 
      use app\Controllers\RestaurantController;
      use app\Controllers\CategoriesController;
+     use app\Controllers\MenusController;
 
      $restaurant = new RestaurantController();
      $category = new CategoriesController();
+     $menu = new MenusController();
 
      if(!isset($_SESSION['restaurant'])){
         $restaurant->redirect('http://'.DOMINIO.'/restaurante/login/usuario-nao-autenticado');

@@ -31,7 +31,7 @@ class Restaurant
 
     public function Select($id)
     {
-        $sql = "SELECT * FROM restaurants WHERE id = '1'";
+        $sql = "SELECT * FROM restaurants WHERE id = '$id'";
 
         $result = mysqli_query($this->DB, $sql);
 

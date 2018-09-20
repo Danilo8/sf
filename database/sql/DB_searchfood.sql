@@ -69,7 +69,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `DB_searchfood`.`categories` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `restaurant_id` INT NOT NULL,
-  `category_name` VARCHAR(45) NOT NULL,
+  `category_name` VARCHAR(80) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_categories_restaurants_idx` (`restaurant_id` ASC),
   CONSTRAINT `fk_categories_restaurants`

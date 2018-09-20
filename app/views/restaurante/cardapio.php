@@ -52,14 +52,23 @@
                                         <?php $row_category = mysqli_fetch_assoc($categories); ?>
                                         <?php if($i == 0) {?>
                                             <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" href="#<?= $row_category['id'] ?>" data-toggle="list" role="tab" aria-controls="<?= $row_category['category_name'] ?>">
-                                                <?= $row_category['category_name'] ?>
+                                                <div class="text-truncate">
+                                                    <i id="arrows" class="fa fa-arrows text-muted"></i>
+                                                    <?= $row_category['category_name'] ?>
+                                                </div>    
+                                            
+                                                <!-- <i class="fa fa-phone"></i> -->
                                                 <span class="badge badge-danger badge-pill">
                                                     0
                                                 </span>                                                
                                             </a>
                                         <?php } else { ?>
-                                            <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center " href="#<?= $row_category['id'] ?>" data-toggle="list" role="tab" aria-controls="<?= $row_category['category_name'] ?>">
-                                                <?= $row_category['category_name'] ?>
+                                            <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="#<?= $row_category['id'] ?>" data-toggle="list" role="tab" aria-controls="<?= $row_category['category_name'] ?>">
+                                                <div class="text-truncate">
+                                                    <i id="arrows" class="fa fa-arrows text-muted"></i>
+                                                    <?= $row_category['category_name'] ?>
+                                                </div>    
+                                            
                                                 <span class="badge badge-danger badge-pill">
                                                     0
                                                 </span>                                                
@@ -89,10 +98,10 @@
                                     <div class="tab-pane fade show active" id="<?= $row_category['id'] ?>" role="tabpanel" aria-labelledby="list-home-list">
                                         <div class="card">
                                             <div class="card-header">
-                                                <button type="button" data-toggle="modal" data-target="#categoriaEditarModal" data-tooltip="tooltip" data-placement="top" title="EDITAR CATEGORIA" class="btn btn-sm p-0 text-success" style="background-color: transparent" data-category-id="<?= $row_category['category_id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
+                                                <button type="button" data-toggle="modal" data-target="#categoriaEditarModal" data-tooltip="tooltip" data-placement="top" title="EDITAR CATEGORIA" class="btn btn-sm p-0 text-success" style="background-color: transparent" data-category-id="<?= $row_category['id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
                                                     <i style="font-size: 22px" class="fa fa-pencil"></i>
                                                 </button>
-                                                <span style="color: black"><?= $row_category['category_name'] ?></span>
+                                                <span style="color: black;"><?= $row_category['category_name'] ?></span>
                                                 <button data-toggle="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success">
                                                     <i class="fa fa-plus-circle"></i>
                                                     ADICIONAR ITEM
@@ -100,17 +109,23 @@
                                             </div>
                                             <div class="card-body">
                                                 
+                                            </div>
+                                            <div class="card-footer text-right">
+                                                <button type="button" class="btn text-danger" style="background-color: transparent" data-toggle="modal" data-target="#categoriaExcluirModal" data-tooltip="tooltip" data-placement="bottom" title="EXCLUIR CATEGORIA" data-category-id="<?= $row_category['id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
+                                                    EXCLUIR CATEGORIA
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 <?php } else { ?>
                                     <div class="tab-pane fade" id="<?= $row_category['id'] ?>" role="tabpanel" aria-labelledby="list-home-list">
                                         <div class="card">
-                                            <div class="card-header">
-                                                <button type="button" data-toggle="modal" data-target="#categoriaEditarModal" data-tooltip="tooltip" data-placement="top" title="EDITAR CATEGORIA" class="btn btn-sm p-0 text-success" style="background-color: transparent" data-category-id="<?= $row_category['category_id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
+                                            <div class="card-header text-truncate">
+                                                <button type="button" data-toggle="modal" data-target="#categoriaEditarModal" data-tooltip="tooltip" data-placement="top" title="EDITAR CATEGORIA" class="btn btn-sm p-0 text-success" style="background-color: transparent" data-category-id="<?= $row_category['id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
                                                     <i style="font-size: 22px" class="fa fa-pencil"></i>
                                                 </button>
-                                                <span style="color: black"><?= $row_category['category_name'] ?></span>
+                                                <span style="color: black;max-width: 10%" class=""><?= $row_category['category_name'] ?></span>
                                                 <button data-toggle="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success">
                                                     <i class="fa fa-plus-circle"></i>
                                                     ADICIONAR ITEM
@@ -118,6 +133,12 @@
                                             </div>
                                             <div class="card-body">
                                                 
+                                            </div>
+                                            <div class="card-footer text-right">
+                                                <button type="button" class="btn text-danger" style="background-color: transparent" data-toggle="modal" data-target="#categoriaExcluirModal" data-tooltip="tooltip" data-placement="bottom" title="EXCLUIR CATEGORIA" data-category-id="<?= $row_category['id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
+                                                    EXCLUIR CATEGORIA
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -168,19 +189,48 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="http://<?=DOMINIO?>/restaurante/cardapio" method="post">
+                    <form action="" method="post">
                         <div class="modal-body">                        
                             <div class="form-group">
                                 <div class="label">Nome da Categoria:</div>
                                 <input type="text" name="category_name" id="category_name" class="form-control" placeholder="Nome da Categoria" required value="">
                                 <input type="hidden" name="<?= md5('category_action')?>" value="<?= md5('update_category')?>">
                                 <input type="hidden" name="category_id" id="category_id" value="">
-                                <input type="hidden" name="restaurant_id" value="<?= $_SESSION['restaurant'] ?>">
-                            </div>                        
+                                <input type="hidden" name="restaurant_id" value="<?= $_SESSION['restaurant'] ?>">                                
+                            </div>                                                
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
                             <button type="submit" class="btn btn-success">SALVAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal para Excluir Categorias -->
+        <div class="modal fade" id="categoriaExcluirModal" tabindex="-1" role="dialog" aria-labelledby="categoriaExcluirModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="categoriaExcluirModalLabel">TEM CERTEZA QUE DESEJA EXCLUIR ESSA CATEGORIA?</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="" method="post">
+                        <div class="modal-body">                        
+                            <div class="form-group">
+                                <div class="label">Nome da Categoria que será excluida:</div>
+                                <input type="text" name="category_name" id="category_name" class="form-control" value="" readonly>
+                                <input type="hidden" name="<?= md5('category_action')?>" value="<?= md5('delete_category')?>">
+                                <input type="hidden" name="category_id" id="category_id" value="">
+                                <input type="hidden" name="restaurant_id" value="<?= $_SESSION['restaurant'] ?>">                                
+                            </div>                                                
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+                            <button type="submit" class="btn btn-danger">EXCLUIR</button>
                         </div>
                     </form>
                 </div>
@@ -197,6 +247,15 @@
                 $('[data-tooltip="tooltip"]').tooltip()
             });
             $('#categoriaEditarModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget) 
+                var category_id = button.data('category-id') 
+                var category_name = button.data('category-name') 
+                
+                var modal = $(this)
+                modal.find('#category_name').val(category_name)
+                modal.find('#category_id').val(category_id)
+            })
+            $('#categoriaExcluirModal').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) 
                 var category_id = button.data('category-id') 
                 var category_name = button.data('category-name') 
@@ -234,6 +293,15 @@
                         showConfirmButton: false,
                         title: 'Essa categoria já existe!',
                         timer: 8000,
+                    })
+                </script>
+            <?php } else if ($msg == "categoria-editada-com-sucesso") { ?>
+                <script type='text/javascript'>
+                    swal({
+                        type: 'success',
+                        showConfirmButton: false,
+                        title: 'Categoria Editada com Sucesso!',
+                        timer: 1500,
                     })
                 </script>
             <?php } ?>
