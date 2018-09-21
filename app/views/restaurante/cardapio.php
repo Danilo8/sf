@@ -103,12 +103,12 @@
                                                     <i style="font-size: 22px" class="fa fa-pencil"></i>
                                                 </button>
                                                 <span style="color: black;"><?= $row_category['category_name'] ?></span>
-                                                <button data-tooltip="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#adicionarItemModal">
+                                                <button data-tooltip="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#adicionarItemModal" data-category-id="<?= $row_category['id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
                                                     <i class="fa fa-plus-circle"></i>
                                                     ADICIONAR ITEM
                                                 </button>
                                             </div>                                        
-                                            <?php if($menu->Select($_SESSION['restaurant'])){ ?>
+                                            <?php if($menu->Select($row_category['id'])){ ?>
                                                 <div class="card-body">
 
                                                 </div>
@@ -137,12 +137,12 @@
                                                     <i style="font-size: 22px" class="fa fa-pencil"></i>
                                                 </button>
                                                 <span style="color: black;max-width: 10%" class=""><?= $row_category['category_name'] ?></span>
-                                                <button data-tooltip="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#adicionarItemModal">
+                                                <button data-tooltip="tooltip" data-placement="top" title="ADICIONAR ITEM" style="float: right" type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#adicionarItemModal" data-category-id="<?= $row_category['id'] ?>" data-category-name="<?= $row_category['category_name'] ?>">
                                                     <i class="fa fa-plus-circle"></i>
                                                     ADICIONAR ITEM
                                                 </button>
                                             </div>
-                                            <?php if($menu->Select($_SESSION['restaurant'])){ ?>
+                                            <?php if($menu->Select($row_category['id'])){ ?>
                                                 <div class="card-body">
                                                 </div>
                                             <?php } else { ?>
@@ -261,23 +261,110 @@
         <div class="modal fade" id="adicionarItemModal" tabindex="-1" role="dialog" aria-labelledby="adicionarItemModalTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="adicionarItemModalTitle">
-                        <span style="color: black;" id="step1" class="step active ml-5 mr-5 pl-5 pr-5">PRODUTO</span>
-                        <i class="fa fa-angle-right ml-5 mr-5 pl-5 pr-5"></i>
-                        <span style="color: black;" id="step2" class="step pl-5 pr-5">VARIAÇÃO</span>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="adicionarItemModalTitle">
+                            <span style="color: black;" id="step1" class="step active ml-5 mr-5 pl-5 pr-5">
+                                PRODUTO
+                            </span>
+                            <i class="fa fa-angle-right ml-5 mr-5 pl-5 pr-5"></i>
+                            <span style="color: black;" id="step2" class="step pl-5 pr-5">
+                                VARIAÇÃO
+                            </span>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form enctype="multipart/form-data" action="" method="post">
+                        <div class="modal-body">
+                            <div id="produto">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label>Foto do Item</label>
+                                            <img class="img-fluid" id='img-upload'/>
+                                            <div class="input-group">
+                                                <span class="btn btn-default btn-file">
+                                                    <button class="btn btn-info">
+                                                        <i style="font-size: 20px" class="fa fa-cloud-upload"></i>
+                                                        Escolha uma Imagem
+                                                        <input type="file" id="imgInp" name="foto_item">
+                                                    </button>
+                                                    <small class="form-text text-muted text-right">(Opcional)</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="product_name">Nome</label>
+                                            <input type="text" name="product_name" id="product_name" class="form-control" placeholder="Nome do Item">
+                                        </div>
+                                        <div class="row">                                            
+                                            <div class="col-5">
+                                                <div class="form-group">
+                                                    <label for="product_price">Preço</label>                                                    
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text text-success">R$</span>
+                                                        </div>
+                                                        <input name="product_price" id="product_price" type="text" class="form-control" placeholder="00,00">
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="col-5">
+                                                <div class="form-group">
+                                                    <label for="promotional_price">Preço Promocional</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text text-success">R$</span>
+                                                        </div>
+                                                        <input name="promotional_price" id="promotional_price" type="text" class="form-control" placeholder="00,00">
+                                                    </div>
+                                                    <small class="form-text text-muted text-right">(Opcional)</small>
+                                                </div>
+                                            </div>                
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-7">
+                                                <div class="form-group">
+                                                    <label for="category_id">Categoria</label>
+                                                    <input type="text" name="category_name" id="category_name" class="form-control" readonly>
+                                                    <input type="hidden" name="category_id" id="category_id" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="form-check">Disponibilidade</label>
+                                                    <br>
+                                                    <div class="form-check form-check-inline custom-radio">
+                                                        <input class="form-check-input custom-control-input" type="radio" name="Disponibilidade" id="inlineRadio1" value="yes" checked>
+                                                        <label class="form-check-label custom-control-label text-success" for="inlineRadio1">ATIVO</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline custom-radio">
+                                                        <input class="form-check-input custom-control-input" type="radio" name="Disponibilidade" id="inlineRadio2" value="no">
+                                                        <label class="form-check-label custom-control-label text-danger" for="inlineRadio2">INATIVO</label>
+                                                    </div>                                                    
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Descrição</label>
+                                            <textarea name="" id="" rows="5" class="form-control"></textarea>
+                                            <small class="form-text text-muted text-right">500</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+                            <button type="button" class="btn btn-success">
+                                CONTINUAR
+                                <i class="fa fa-angle-double-right"></i>
+                            </button>
+                        </div>
+                    </form>                    
                 </div>
             </div>
         </div>
@@ -288,6 +375,7 @@
         <script src="http://<?=DOMINIO?>/public/js/valida-login.js"></script>
         <script src="http://<?=DOMINIO?>/public/js/modal.js"></script>
         <script src="http://<?=DOMINIO?>/public/js/scrolly.js"></script>
+        <script src="http://<?=DOMINIO?>/public/js/btn-file.js"></script>
         <script type="text/javascript">
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip()
