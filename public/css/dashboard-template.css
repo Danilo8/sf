@@ -99,3 +99,6 @@ body {
 #img-upload{
     width: 100%;
 }
+#produto .form-group {
+    margin-bottom: 5px;
+}

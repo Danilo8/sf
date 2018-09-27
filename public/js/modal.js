@@ -22,6 +22,8 @@ $('#adicionarItemModal').on('show.bs.modal', function (event) {
     var category_name = button.data('category-name')
 
     var modal = $(this)
-    modal.find('#category_name').val(category_name)
+    modal.find('input, textarea').val("")
+    modal.find('input, textarea').css({ 'border-color': '#ced4da' })
+    modal.find('#category_name').val(category_name)    
     modal.find('#category_id').val(category_id)
 })
