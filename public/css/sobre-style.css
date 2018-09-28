@@ -1,0 +1,26 @@
+.container-fluid {
+    height: 35vh;
+}
+.card {
+    background: #fff;
+    padding: 45px;
+    margin-top: -100px;
+    z-index: 22;
+    position: relative;
+    border-radius: 20%;
+    border: none;
+}
+@media only screen and (max-width: 62rem) {
+    .card {
+        background: #fff;
+        padding: 45px;
+        margin-top: -100px;
+        z-index: 22;
+        position: relative;
+        border-radius: 0%;
+        border: none;
+    }
+    .container{
+        padding: 0;
+    }
+}

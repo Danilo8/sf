@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Sobre</title>
+        <title>Sobre o Search Food</title>
 
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
@@ -19,6 +19,7 @@
         <!--CSS files-->
         <link rel="stylesheet" href="public/css/navbar-style.css">
         <link rel="stylesheet" href="public/css/footer-style.css">
+        <link rel="stylesheet" href="public/css/sobre-style.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -28,17 +29,46 @@
         <!--fa fa-icons-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    <body>
+    <style>
+        .container-fluid{background:url('public/img/bg/bg-sobre.jpg')no-repeat center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+    </style>
+    <body style="font-family: 'Open Sans', sans-serif;">
         <?php include 'templates/navbar.php' ?>
-        <h1 class="text-center mt-5">Sobre</h1>
+        
+        <div class="container-fluid"></div>
+        <div class="container">
+            <div class="card">
+                <h3 class="text-center">
+                    Sobre o Search Food
+                </h3>
+                <div class="card-body mt-5">
+                    <p><b>Que somos?</b></p>
+                    <p class="mb-4">
+                    O Search Food é uma empresa de delivery de comida online que visa 
+                    facilitar e agilizar o processo de pedir comida.
+                    </p>
+                    <p><b>O que buscamos?</b><i></i></p>
+                    <p class="mb-4">
+                    Conectar milhões de usuários a centenas de restaurantes 
+                    com delivery de comida, facilitando e proporcionando uma 
+                    nova experiencia na hora de vender ou pedir comida.
+                    </p>
+                    <p><b>O que nos motiva?</b></p>
+                    <p class="mb-4">
+                    Ser a empresa líder em delivery de comida online no Brasil.
+                    </p>
+                    <p><b>Como somos?</b></p>
+                    <p class="mb-4">
+                    
+                    </p>
+                </div>
+            </div>
+        </div>
 
         <?php include 'templates/footer.php'?>
 
         <!--JS files-->
         <script src="public/js/popper.js"></script>
         <script src="public/js/bootstrap.js"></script>
-        <script src="public/js/writer.js"></script>
-        <script src="public/js/valida-cadastro.js"></script>
-
     </body>
 </html>
