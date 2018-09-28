@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Entrar/Cadastrar</title>
+        <title>Entrar ou Cadastrar</title>
 
         <!--Fonts-->
 <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
@@ -19,6 +19,7 @@
         <!--CSS files-->
         <link rel="stylesheet" href="public/css/navbar-style.css">
         <link rel="stylesheet" href="public/css/footer-style.css">
+        <link rel="stylesheet" href="public/css/entrar-style.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -30,7 +31,27 @@
     </head>
     <body>
         <?php include 'app/views/templates/navbar.php' ?>
-        <h1 class="text-center mt-5">Entrar/Cadastrar</h1>
+        
+        <div class="container">
+            <div class="row mt-5" id="row">
+                <div class="col pr-0">
+                    <div class="border-right">
+                        <h3 class="text-center">Quero me Cadastrar!</h3>
+                        <form action="" method="post">
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col pl-0">
+                    <div class="border-left">
+                        <h3 class="text-center">Já sou Cadastrado!</h3>
+                        <form action="" method="post">
+
+                        </form>
+                    </div>
+                </div>
+            </div>            
+        </div>
 
         <?php include 'app/views/templates/footer.php'?>
 

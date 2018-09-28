@@ -23,7 +23,7 @@
                     <a class="nav-link text-white" href="http://<?=DOMINIO?>/contato">Contato</a>                
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://<?=DOMINIO?>/entrar">Entrar/Cadastrar</a>
+                    <a class="nav-link" href="http://<?=DOMINIO?>/entrar">Entrar ou Cadastrar</a>
                 </li>
                 <div id="donos-restaurante" class="dropdown nav-item">
                     <span style="cursor: pointer" class="nav-link active text-white">
@@ -71,9 +71,9 @@
                 </li>
                 <li class="nav-item">
                     <?php if ($route->File == 'user/entrar') { ?>
-                        <a class="nav-link text-white active" href="entrar">Entrar/Cadastrar</a>
+                        <a class="nav-link text-white active" href="entrar">Entrar ou Cadastrar</a>
                     <?php } else { ?>
-                        <a class="nav-link text-white" href="entrar">Entrar/Cadastrar</a>
+                        <a class="nav-link text-white" href="entrar">Entrar ou Cadastrar</a>
                     <?php } ?> 
                 </li>
                 <div id="donos-restaurante" class="dropdown nav-item">

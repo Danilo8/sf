@@ -32,15 +32,15 @@
     <style>
         .container-fluid{background:url('public/img/bg/bg-sobre.jpg')no-repeat center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
     </style>
-    <body style="font-family: 'Open Sans', sans-serif;">
+    <body>
         <?php include 'templates/navbar.php' ?>
         
         <div class="container-fluid"></div>
         <div class="container">
             <div class="card">
-                <h3 class="text-center">
+                <h2 class="text-center">
                     Sobre o Search Food
-                </h3>
+                </h2>
                 <div class="card-body mt-5">
                     <p><b>Que somos?</b></p>
                     <p class="mb-4">
