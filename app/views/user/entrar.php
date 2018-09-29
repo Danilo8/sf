@@ -116,7 +116,105 @@
                         </div>
                     </form>
                 </div>
-            </div>            
+            </div>  
+            <div id="tab" class="mb-5 mt-4">
+                <div class="container mb-5 card px-0">
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item" style="width: 100%">
+                            <a class="nav-link active px-0" id="cadastrar-tab" data-toggle="tab" href="#cadastrar" role="tab" aria-controls="cadastrar" aria-selected="true" style="color: black">
+                                Quero me Cadastrar!
+                            </a>
+                        </li>
+                        <li class="nav-item" style="width: 100%">
+                            <a class="nav-link px-0" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="false" style="color: black">
+                                Já sou Cadastrado!
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content px-3" id="myTabContent">
+                        <div class="tab-pane fade show active" id="cadastrar" role="tabpanel" aria-labelledby="cadastrar-tab">
+                            <form action="" method="post">
+                                <div class="form-group mt-5">                            
+                                    <button style="background-color: #3b5998;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">
+                                        <i style="font-size: 25px" class="fa fa-facebook"></i>
+                                        Cadastrar com Facebook
+                                    </button>
+                                    <button style="background-color: #dd4b39;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">
+                                        <i style="font-size: 25px" class="fa fa-google-plus"></i>
+                                        Cadastrar com Google
+                                    </button>
+                                    <button type="button" class="btn btn-block btn-lg btn-info text-truncate" data-toggle="collapse" data-target="#form-cadastro-email2" aria-expanded="false" aria-controls="form-cadastro-email2">
+                                        <i style="font-size: 25px" class="fa fa-envelope"></i>
+                                        Cadastrar com Email
+                                    </button>
+                                </div>
+                                <div class="collapse multi-collapse" id="form-cadastro-email2">
+                                    <div class="form-group mt-4">
+                                        <label for="">Nome:</label>
+                                        <input type="text" name="" id="" class="form-control" placeholder="Nome">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Email:</label>
+                                        <input type="email" name="" id="" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Telefone:</label>
+                                        <input type="text" name="" id="" class="form-control" placeholder="Telefone">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Senha:</label>
+                                        <input type="password" name="" id="" class="form-control" placeholder="Senha">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Confirme sua Senha:</label>
+                                        <input type="password" name="" id="" class="form-control" placeholder="Confirme sua Senha">
+                                    </div>
+                                    <div class="custom-control custom-checkbox mt-4">
+                                        <input type="checkbox" class="custom-control-input" id="check">
+                                        <label class="custom-control-label" for="check">
+                                            Li e aceito os termos de uso e as políticas de privacidade.
+                                        </label>
+                                    </div>
+                                    <div class="form-group mt-5">
+                                        <button type="button" class="btn btn-block btn-lg btn-primary">Cadastrar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
+                            <form action="" method="post">
+                                <div class="form-group mt-5">                            
+                                    <button style="background-color: #3b5998;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">
+                                        <i style="font-size: 25px" class="fa fa-facebook"></i>
+                                        Entrar com Facebook
+                                    </button>
+                                    <button style="background-color: #dd4b39;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">
+                                        <i style="font-size: 25px" class="fa fa-google-plus"></i>
+                                        Entrar com Google
+                                    </button>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email:</label>
+                                    <input type="text" name="" id="" class="form-control" placeholder="Digite seu Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Senha:</label>
+                                    <input type="text" name="" id="" class="form-control" placeholder="Digite sua Senha">
+                                </div>
+                                <div class="form-group mt-4">                            
+                                    <button type="button" class="btn btn-block btn-lg btn-primary">Entrar</button>
+                                </div>
+                                <div class="form-group text-center">
+                                    <a class="text-danger" href="#">
+                                        <i class="fa fa-lock"></i>
+                                        Recuperar Senha
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>                
+            </div>          
         </div>
 
         <?php include 'app/views/templates/footer.php'?>
