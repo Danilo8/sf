@@ -57,17 +57,17 @@
                             <input type="password" name="password" id="password" class="form-control" placeholder="Senha">
                             <small class="text-danger" style="float: right" id="error_password"></small>
                         </div>
-                        <div class="form-group text-center">
-                            <a class="text-danger" href="#">
-                                <i class="fa fa-lock"></i>
-                                Recuperar Senha
-                            </a>
-                        </div>
                         <input type="hidden" name="action" value="logar">
                         <div class="form-group">
                             <button id="btn-login" class="btn btn-lg btn-primary btn-block" type="button">
                                 Entrar
                             </button>
+                        </div>
+                        <div class="form-group text-center">
+                            <a class="text-danger" href="#">
+                                <i class="fa fa-lock"></i>
+                                Recuperar Senha
+                            </a>
                         </div>
                     </form>
                 </div>
