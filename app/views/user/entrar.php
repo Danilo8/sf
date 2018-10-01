@@ -53,24 +53,29 @@
                         </div>
                         <div class="collapse multi-collapse" id="form-cadastro-email">
                             <div class="form-group mt-4">
-                                <label for="">Nome:</label>
-                                <input type="text" name="" id="" class="form-control" placeholder="Nome">
+                                <label for="name">Nome:</label>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Nome">
+                                <small style="float: right" class="text-danger" id="error_name"></small>
                             </div>
                             <div class="form-group">
-                                <label for="">Email:</label>
-                                <input type="email" name="" id="" class="form-control" placeholder="Email">
+                                <label for="email">Email:</label>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                <small style="float: right" class="text-danger" id="error_email"></small>
                             </div>
                             <div class="form-group">
-                                <label for="">Telefone:</label>
-                                <input type="text" name="" id="" class="form-control" placeholder="Telefone">
+                                <label for="phone">Telefone:</label>
+                                <input type="text" name="phone" id="phone" class="form-control" placeholder="Telefone">
+                                <small style="float: right" class="text-danger" id="error_phone"></small>
                             </div>
                             <div class="form-group">
-                                <label for="">Senha:</label>
-                                <input type="password" name="" id="" class="form-control" placeholder="Senha">
+                                <label for="password">Senha:</label>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Senha">
+                                <small style="float: right" class="text-danger" id="error_password"></small>
                             </div>
                             <div class="form-group">
-                                <label for="">Confirme sua Senha:</label>
-                                <input type="password" name="" id="" class="form-control" placeholder="Confirme sua Senha">
+                                <label for="password_confirm">Confirme sua Senha:</label>
+                                <input type="password" name="password_confirm" id="password_confirm" class="form-control" placeholder="Confirme sua Senha">
+                                <small style="float: right" class="text-danger" id="error_password_confirm"></small>
                             </div>
                             <div class="custom-control custom-checkbox mt-4">
                                 <input type="checkbox" class="custom-control-input" id="check">
@@ -150,24 +155,24 @@
                                 </div>
                                 <div class="collapse multi-collapse" id="form-cadastro-email2">
                                     <div class="form-group mt-4">
-                                        <label for="">Nome:</label>
-                                        <input type="text" name="" id="" class="form-control" placeholder="Nome">
+                                        <label for="name">Nome:</label>
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Nome">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Email:</label>
-                                        <input type="email" name="" id="" class="form-control" placeholder="Email">
+                                        <label for="email">Email:</label>
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Telefone:</label>
-                                        <input type="text" name="" id="" class="form-control" placeholder="Telefone">
+                                        <label for="phone">Telefone:</label>
+                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Telefone">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Senha:</label>
-                                        <input type="password" name="" id="" class="form-control" placeholder="Senha">
+                                        <label for="password">Senha:</label>
+                                        <input type="password" name="password" id="password" class="form-control" placeholder="Senha">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Confirme sua Senha:</label>
-                                        <input type="password" name="" id="" class="form-control" placeholder="Confirme sua Senha">
+                                        <label for="password_confirm">Confirme sua Senha:</label>
+                                        <input type="password" name="password_confirm" id="password_confirm" class="form-control" placeholder="Confirme sua Senha">
                                     </div>
                                     <div class="custom-control custom-checkbox mt-4">
                                         <input type="checkbox" class="custom-control-input" id="check">
@@ -222,7 +227,6 @@
         <!--JS files-->
         <script src="public/js/popper.js"></script>
         <script src="public/js/bootstrap.js"></script>
-        <script src="public/js/writer.js"></script>
-        <script src="public/js/valida-cadastro.js"></script>
+        <script src="public/js/valida-user-cadastro.js"></script>
     </body>
 </html>
