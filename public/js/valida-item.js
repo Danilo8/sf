@@ -42,6 +42,17 @@ $(document).ready(function () {
         $('#step1').addClass('active');
         $('#step2').removeClass('active');
     });
+
+    $("#add-v").click(function () {
+        if ($("#variation").val() == "") {
+            $("#variation").css({ 'border-color': 'red' });
+            $("#error-variation").html("Campo Obrigatório!");
+        } else {
+            $("#variation").css({ 'border-color': '#ced4da' });
+            $("#error-variation").html("");
+
+        }
+    });
 });
 
 function digita(d, t) {
@@ -54,4 +65,8 @@ function digita(d, t) {
 function abrirModal() {
     $('#produto').css({ 'display': 'block' });
     $('#variacao').css({ 'display': 'none' });
+}
+
+function border(id) {
+    $('#'+id).css({ 'border-color': '#ced4da' });
 }

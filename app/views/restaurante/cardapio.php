@@ -290,6 +290,7 @@
                     <form enctype="multipart/form-data" action="" method="post">
                         <div id="produto">
                             <div class="modal-body">
+                                
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="form-group">
@@ -310,7 +311,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="product_name">Nome <span class="text-danger" style="font-size: 22px;font-family: Arial">*</span></label>
-                                            <input type="text" name="product_name" id="product_name" class="form-control" placeholder="Nome do Item">
+                                            <input oninput="border('product_name')" type="text" name="product_name" id="product_name" class="form-control" placeholder="Nome do Item">
                                         </div>
                                         <div class="row">                                            
                                             <div class="col-5">
@@ -320,7 +321,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text text-success">R$</span>
                                                         </div>
-                                                        <input name="product_price" id="product_price" type="text" class="form-control" placeholder="00,00" onkeydown="FormataMoeda(this, 10, event)" onkeypress="return maskKeyPress(event)">
+                                                        <input oninput="border('product_price')" name="product_price" id="product_price" type="text" class="form-control" placeholder="0,00" onkeydown="FormataMoeda(this, 10, event)" onkeypress="return maskKeyPress(event)">
                                                     </div>
                                                 </div>
                                             </div>                                            
@@ -331,7 +332,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text text-success">R$</span>
                                                         </div>
-                                                        <input name="promotional_price" id="promotional_price" type="text" class="form-control" placeholder="00,00" onkeydown="FormataMoeda(this, 10, event)" onkeypress="return maskKeyPress(event)">
+                                                        <input name="promotional_price" id="promotional_price" type="text" class="form-control" placeholder="0,00" onkeydown="FormataMoeda(this, 10, event)" onkeypress="return maskKeyPress(event)">
                                                     </div>
                                                     <small class="form-text text-muted text-right">(Opcional)</small>
                                                 </div>
@@ -362,8 +363,8 @@
                                         </div>
                                         <div class="form-group mb-0">
                                             <label for="product_description">Descrição <span class="text-danger" style="font-size: 22px;font-family: Arial">*</span></label>
-                                            <textarea oninput="digita(this.value,'max')" name="product_description" id="product_description" rows="5" class="form-control" maxlength="500"></textarea>
-                                            <small id="max" class="form-text text-muted text-right">500</small>
+                                            <textarea placeholder="Descrição do Item. (MAX 500 caracteres)" oninput="digita(this.value,'max');border('product_description')" name="product_description" id="product_description" rows="5" class="form-control" maxlength="500"></textarea>
+                                            <small class="form-text text-muted text-right"><span id="max">500</span> caracteres restantes.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -377,12 +378,13 @@
                         </div>
                         <div id="variacao" style="display: none">
                             <div class="modal-body">
-                                <div class="form-group mb-5 mt-1">
-                                    <label for="">Nome da Variação</label>
+                                <div class="form-group mb-3 mt-1">
+                                    <label for="variation">Nome da Variação</label>
                                     <div class="row pl-3">                                        
-                                        <input type="text" name="" id="" class="form-control col-8" placeholder="Nome da Variação">
-                                        <button type="button" class="btn btn-primary col-3 ml-5">ADICIONAR</button>
+                                        <input oninput="border('variation')" type="text" name="variation" id="variation" class="form-control col-8" placeholder="Nome da Variação">
+                                        <button id="add-v" type="button" class="btn btn-primary col-3 ml-5">ADICIONAR</button>
                                     </div>
+                                    <small class="text-danger mb-0 pb-0" id="error-variation"></small>
                                 </div>  
                                 <div id="exemplos" class="container-fluid p-3 border py-4" style="background-color: #fff">
                                     <span>
@@ -395,7 +397,7 @@
                                             <i class="fa fa-dot-circle-o"></i>
                                         </div>
                                         <div class="col-sm p-0">
-                                            Variação: <b>Tamanho</b> <br>
+                                            Variação: <b>Tamanhos</b> <br>
                                             Opções: Grande, Medio e Pequeno
                                         </div>
                                     </span>
@@ -422,19 +424,20 @@
                                             <i class="fa fa-dot-circle-o"></i>
                                         </div>
                                         <div class="col-sm p-0">
-                                            Variação: <b>Queijo</b> <br>
+                                            Variação: <b>Queijos</b> <br>
                                             Opções: Cheddar, Prato, Muzzarela
                                         </div>
                                     </span>
                                 </div>                              
                             </div>
+                            <input type="hidden" name="menu_action" value="cadastrar">
                             <div class="modal-footer">
                                 <button type="button" id="voltar" class="btn btn-secondary">
                                     <i class="fa fa-angle-double-left"></i>
                                     VOLTAR                                    
                                 </button>
-                                <button id="cadastrar" type="button" class="btn btn-success">
-                                    CADASTRAR
+                                <button id="cadastrar" type="submit" class="btn btn-success">
+                                    CADASTRAR SEM VARIAÇÃO
                                     <i class="fa fa-check"></i>
                                 </button>
                             </div>

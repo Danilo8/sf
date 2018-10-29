@@ -12,14 +12,18 @@ class MenusController
     {
         $this->model = new Menus();
 
-        if (isset($_POST[md5('menu_action')])) {
-            switch ($variable) {
-                case 'value':
-                    # code...
+        if (isset($_POST)) {
+            switch ($_POST['menu_action']) {
+                case 'cadastrar':
+                    echo "Aqui!";
+                    break;
+
+                case 'cadastrar2':
+                    echo "Aqui!";
                     break;
                 
                 default:
-                    # code...
+                    echo "default!";
                     break;
             }
         }
@@ -27,7 +31,11 @@ class MenusController
 
     public function Insert()
     {
-        
+        if ($this->model->Insert($_POST)) {
+            echo "Cadastrou!";
+        } else {
+            echo "Não Cadastrou!";
+        }
     }
 
     public function Select($id)
