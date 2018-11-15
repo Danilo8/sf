@@ -33,7 +33,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.0/sweetalert2.all.js"></script>
     </head>
     <body>
-        <?php include 'app/views/templates/dashboard.php'?>
+        <?php include 'app/Views/templates/dashboard.php'?>
 
         <div class="container mt-5">
             <div class="row">

@@ -42,7 +42,7 @@
         .container-fluid{background:url('http://<?=DOMINIO?>/public/img/bg/bg-cadastro.jpg')no-repeat center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
     </style>
     <body>
-        <?php include 'app/views/templates/navbar.php'?>
+        <?php include 'app/Views/templates/navbar.php'?>
 
         <div style="" class="container-fluid pt-4">
             <h1 class="text-center pt-5 text-white">
@@ -201,7 +201,7 @@
             </div>
         </div>
 
-        <?php include 'app/views/templates/footer.php'?>
+        <?php include 'app/Views/templates/footer.php'?>
 
         <!--JS files-->
         <script src="http://<?=DOMINIO?>/public/js/popper.js"></script>

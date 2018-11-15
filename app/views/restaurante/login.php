@@ -35,7 +35,7 @@
         body{background:url('http://<?=DOMINIO?>/public/img/bg/bg-login.jpg')no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
     </style>
     <body>
-        <?php include 'app/views/templates/navbar.php' ?>
+        <?php include 'app/Views/templates/navbar.php' ?>
         
         <div id="right" class="col-4 p-0">
             <div class="card bg-light">

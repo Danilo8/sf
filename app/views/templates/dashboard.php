@@ -27,7 +27,7 @@
         </h3>
     </ul>
     <ul class="nav justify-content-end">
-        <?php include 'app/views/templates/notificacoes.php' ?>
+        <?php include 'app/Views/templates/notificacoes.php' ?>
         
         <span class="nav-item">
             <button style="border: none" type="button" class="nav-link btn btn-link" data-toggle="modal" data-target="#logoutModal">

@@ -37,10 +37,10 @@ class Routes
         if (!preg_match('/^[0-9]*$/', $this->Local[0])) {
 
             // Verifica se o ultimo indice do Local é um arquivo PHP
-            if (!file_exists(REQ . '/views/' . end($this->Local) . '.php')) {
+            if (!file_exists(REQ . '/Views/' . end($this->Local) . '.php')) {
                 
                 // Verifica se o arquivo PHP do indice [0] não existe
-                if (!file_exists('app' . '/views/' . $this->Local[0]. '.php')) {
+                if (!file_exists('app' . '/Views/' . $this->Local[0]. '.php')) {
                     
                     // Verifica se o indice [1] do Local foi setado ou não esta vazio
                     if (isset($this->Local[1]) && !empty($this->Local[1])) {
@@ -49,7 +49,7 @@ class Routes
                         if (!preg_match('/^[0-9]*$/', $this->Local[1])) {
                             
                             //Verifica se o arquivo PHP no indice [1] existe
-                            if (file_exists(REQ . '/views/' . $this->Local[0] . '/' . $this->Local[1] . '.php')) {
+                            if (file_exists(REQ . '/Views/' . $this->Local[0] . '/' . $this->Local[1] . '.php')) {
                                 
                                 $this->Path = $this->Local[0];
                                 $this->File = $this->Local[1];
@@ -67,7 +67,7 @@ class Routes
                     } else {
                         
                         // Verifica se o arquivo PHP do indice [0] existe
-                        if (file_exists(REQ . '/views/' . $this->Local[0] . 'home.php')) {
+                        if (file_exists(REQ . '/Views/' . $this->Local[0] . 'home.php')) {
                                 $this->Path = $this->Local[0];
                                 $this->File = $this->Local[1];
                                 $this->Link = (isset($this->Local[2]) ? $this->Local[2] : null);

@@ -30,7 +30,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <?php include 'app/views/templates/navbar.php' ?>
+        <?php include 'app/Views/templates/navbar.php' ?>
         
         <div class="container">
             <div class="row my-5" id="row">
@@ -222,7 +222,7 @@
             </div>          
         </div>
 
-        <?php include 'app/views/templates/footer.php'?>
+        <?php include 'app/Views/templates/footer.php'?>
 
         <!--JS files-->
         <script src="public/js/popper.js"></script>
