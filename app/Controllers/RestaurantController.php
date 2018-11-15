@@ -18,7 +18,7 @@ class RestaurantController
     {
         if ($session == 'restaurant') {
             $_SESSION['restaurant'] = $id;
-            $this->redirect('http://'.DOMINIO.'/restaurante/dashboard');
+            $this->redirect('http://'.URL.'/restaurante/dashboard');
         }
     }
 
@@ -26,7 +26,7 @@ class RestaurantController
     {
         session_destroy();
         if ($session == 'restaurant') {
-            $this->redirect('http://'.DOMINIO.'/restaurante/login');
+            $this->redirect('http://'.URL.'/restaurante/login');
         } 
     }
 

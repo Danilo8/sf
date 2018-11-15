@@ -29,7 +29,7 @@ class RegisterController
                     break;
                 
                 default:
-                    $this->redirect('http://'.DOMINIO.'/404');
+                    $this->redirect('http://'.URL.'/404');
                     break;
             }
         }
@@ -38,9 +38,9 @@ class RegisterController
     public function cadastrar()
     {
         if ($this->model->Insert($_POST)) {
-            $this->redirect('http://'.DOMINIO.'/restaurante/login/cadastro-sucesso');
+            $this->redirect('http://'.URL.'/restaurante/login/cadastro-sucesso');
         } else {
-            $this->redirect('http://'.DOMINIO.'/restaurante/cadastro/');
+            $this->redirect('http://'.URL.'/restaurante/cadastro/');
         }
         
     }
@@ -50,7 +50,7 @@ class RegisterController
         $auth = $this->model->Auth($_POST['email'], $_POST['password']);
 
         if (!$auth) {
-            $this->redirect('http://'.DOMINIO.'/restaurante/login/email-ou-senha-invalidos');            
+            $this->redirect('http://'.URL.'/restaurante/login/email-ou-senha-invalidos');            
         } else {
             $row = $auth->fetch_assoc();
             $this->restaurant->start_session('restaurant', $row['id']);

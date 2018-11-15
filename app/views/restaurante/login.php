@@ -11,14 +11,14 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
         <!--Favicon-->
-        <link rel="shortcut icon" href="http://<?=DOMINIO?>/public/img/icon/SF.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="http://<?=URL?>/public/img/icon/SF.ico" type="image/x-icon">
 
         <!--cdn Bootstrap CSS file-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
         <!--CSS files-->
-        <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/navbar-style.css">
-        <link rel="stylesheet" href="http://<?=DOMINIO?>/public/css/restaurante-login-style.css">
+        <link rel="stylesheet" href="http://<?=URL?>/public/css/navbar-style.css">
+        <link rel="stylesheet" href="http://<?=URL?>/public/css/restaurante-login-style.css">
 
         <!-- Jquery and Bootstrap JS Script files-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,7 +32,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.0/sweetalert2.all.js"></script>
     </head>
     <style>
-        body{background:url('http://<?=DOMINIO?>/public/img/bg/bg-login.jpg')no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+        body{background:url('http://<?=URL?>/public/img/bg/bg-login.jpg')no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
     </style>
     <body>
         <?php include 'app/Views/templates/navbar.php' ?>
@@ -46,7 +46,7 @@
                     <div class="text-center mt-4">
                         <a href="cadastro">Cadastrar meu Restaurante</a>
                     </div>
-                    <form id="form-login" class="mx-4" action="http://<?=DOMINIO?>/app/Controllers/RegisterController.php" method="post">
+                    <form id="form-login" class="mx-4" action="http://<?=URL?>/app/Controllers/RegisterController.php" method="post">
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" name="email" id="email" class="form-control" placeholder="Email">
@@ -75,9 +75,9 @@
         </div>
 
         <!--JS files-->
-        <script src="http://<?=DOMINIO?>/public/js/popper.js"></script>
-        <script src="http://<?=DOMINIO?>/public/js/bootstrap.js"></script>
-        <script src="http://<?=DOMINIO?>/public/js/valida-login.js"></script>
+        <script src="http://<?=URL?>/public/js/popper.js"></script>
+        <script src="http://<?=URL?>/public/js/bootstrap.js"></script>
+        <script src="http://<?=URL?>/public/js/valida-login.js"></script>
 
         <?php if (isset($route->Link)) { ?>
             <?php $msg = $route->Link; ?>

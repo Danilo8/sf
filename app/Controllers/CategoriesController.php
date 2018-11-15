@@ -24,7 +24,7 @@ class CategoriesController
                     $this->Delete();
                     break;
                 default:
-                    $this->redirect('http://'.DOMINIO.'/restaurante/cardapio');
+                    $this->redirect('http://'.URL.'/restaurante/cardapio');
                     break;
             }
         }
@@ -45,12 +45,12 @@ class CategoriesController
         
         if (!$exist) {
             if ($this->model->Insert($_POST)) {
-                $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/categoria-adicionada-com-sucesso');
+                $this->redirect('http://'.URL.'/restaurante/cardapio/categoria-adicionada-com-sucesso');
             } else {
-                $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/erro-ao-adicionada-categoria');
+                $this->redirect('http://'.URL.'/restaurante/cardapio/erro-ao-adicionada-categoria');
             }
         } else {
-            $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/categoria-ja-existe');
+            $this->redirect('http://'.URL.'/restaurante/cardapio/categoria-ja-existe');
         }
     }
 
@@ -68,9 +68,9 @@ class CategoriesController
     public function Update()
     {
         if ($this->model->Update($_POST)) {
-            $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/categoria-editada-com-sucesso');
+            $this->redirect('http://'.URL.'/restaurante/cardapio/categoria-editada-com-sucesso');
         } else {
-            $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/erro-ao-editar-categoria');
+            $this->redirect('http://'.URL.'/restaurante/cardapio/erro-ao-editar-categoria');
         }
         
     }
@@ -80,14 +80,14 @@ class CategoriesController
         $menu = new MenusController();
 
         if ($menu->Select($_POST['restaurant_id'])) {
-            $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/categoria-possui-itens');
+            $this->redirect('http://'.URL.'/restaurante/cardapio/categoria-possui-itens');
         } else {
             $result = $this->model->Delete($_POST['category_id']);
 
             if ($result) {
-                $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/categoria-excluida-com-sucesso');
+                $this->redirect('http://'.URL.'/restaurante/cardapio/categoria-excluida-com-sucesso');
             } else {
-                $this->redirect('http://'.DOMINIO.'/restaurante/cardapio/erro-ao-excluir-categoria');
+                $this->redirect('http://'.URL.'/restaurante/cardapio/erro-ao-excluir-categoria');
             }
             
         }
