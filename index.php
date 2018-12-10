@@ -1,7 +1,7 @@
 <?php
 
 define('REQ', "app" . DIRECTORY_SEPARATOR);
-define('URL', 'localhost/searchfood');
+define('URL', 'localhost/searchfoodv3');
 
 require_once (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'autoload.php');
 

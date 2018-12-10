@@ -41,10 +41,10 @@
                     <div data-html="true" data-toggle="tooltip" data-placement="<?= $array[rand(0, 3)] ?>" title="Meus Ganhos <br> R$ 0,00" style="padding-top: 5px;background-color: white" class="card text-success">
                         <div class="media">
                             <div class="media-left meida media-middle">
-                                <i style="font-size: 35px;margin-left: 10px;border-radius: 20%;padding: 10px;margin-bottom: 3px" class="fa fa-money text-white bg-success"></i>
+                                <i style="font-size: 30px;margin-left: 10px;border-radius: 2rem;padding: 10px;margin-bottom: 3px" class="fas fa-dollar-sign text-white bg-success px-3"></i>
                             </div>
                             <div style="padding-top: 10px;" class="media-body media-text-right">
-                                <h3 style="max-width: 180px;padding-left: 10px" class="text-truncate">R$ 0,00</h3>
+                                <h4 style="max-width: 180px;" class="text-truncate">R$ 0,00</h4>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -59,7 +59,7 @@
                     <div data-html="true" data-toggle="tooltip" data-placement="<?= $array[rand(0, 3)] ?>" title="Número de Pedidos<br>0" style="padding-top: 10px;color: white" class="card text-dark">
                         <div class="media">
                             <div class="media-left meida media-middle">
-                                <i style="font-size: 30px;margin-left: 10px;border-radius: 20%;padding: 10px;padding-right: 13px;margin-bottom: 3px" class="fa fa-shopping-cart bg-dark text-white"></i>
+                                <i style="font-size: 30px;margin-left: 10px;border-radius: 2rem;margin-bottom: 3px" class="fas fa-download bg-dark text-white py-2 px-2"></i>
                             </div>
                             <div style="padding-top: 5px;" class="media-body media-text-right">
                                 <h3>0</h3>

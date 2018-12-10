@@ -26,7 +26,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
-        <!--fa fa-icons-->
+        <!--Fontawesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     </head>
     <body>
@@ -39,7 +39,7 @@
                     <form action="" method="post" class="px-5">
                         <div class="form-group mt-5">                            
                             <button style="background-color: #3b5998;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">
-                                <i style="font-size: 25px" class="fa fa-facebook"></i>
+                                <i style="font-size: 25px" class="fab fa-facebook-f"></i>
                                 Cadastrar com Facebook
                             </button>
                             <button style="background-color: #dd4b39;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">
@@ -94,7 +94,7 @@
                     <form action="" method="post" class="px-5">
                          <div class="form-group mt-5">                            
                             <button style="background-color: #3b5998;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">
-                                <i style="font-size: 25px" class="fa fa-facebook"></i>
+                                <i style="font-size: 25px" class="fab fa-facebook-f"></i>
                                 Entrar com Facebook
                             </button>
                             <button style="background-color: #dd4b39;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">
@@ -141,7 +141,7 @@
                             <form action="" method="post">
                                 <div class="form-group mt-5">                            
                                     <button style="background-color: #3b5998;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">
-                                        <i style="font-size: 25px" class="fa fa-facebook"></i>
+                                        <i style="font-size: 25px" class="fab fa-facebook-f"></i>
                                         Cadastrar com Facebook
                                     </button>
                                     <button style="background-color: #dd4b39;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">
@@ -190,7 +190,7 @@
                             <form action="" method="post">
                                 <div class="form-group mt-5">                            
                                     <button style="background-color: #3b5998;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">
-                                        <i style="font-size: 25px" class="fa fa-facebook"></i>
+                                        <i style="font-size: 25px" class="fab fa-facebook-f"></i>
                                         Entrar com Facebook
                                     </button>
                                     <button style="background-color: #dd4b39;color: #fff" type="button" class="btn btn-block btn-lg text-truncate">

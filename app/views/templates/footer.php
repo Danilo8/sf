@@ -4,13 +4,13 @@
     <div class="text-center">
         <ul class="list-unstyled list-inline">
             <li class="list-inline-item">
-                <a id="i" target="_blanck1" href="https://www.facebook.com/" class="fa fa-facebook"></a>
+                <a id="i" target="_blanck1" href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
             </li>
             <li class="list-inline-item">
                 <a id="i" target="_blanck2" href="https://www.instagram.com/" class="fa fa-instagram"></a>
             </li>
             <li class="list-inline-item">
-                <a id="i" target="_blanck3" href="https://www.youtube.com/" class="fa fa-youtube-play"></a>
+                <a id="i" target="_blanck3" href="https://www.youtube.com/" class="fab fa-youtube"></a>
             </li>
         </ul>
     </div>

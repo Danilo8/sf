@@ -12,7 +12,7 @@ class Settings
         define('HOST', 'localhost');    //definindo o Servidor
         define('USER', 'root');         //definindo o Usuário
         define('PASSWORD', '');         //definindo a Senha
-        define('DB', 'DB_searchfood');  //definindo o Banco de Dados 
+        define('DB', 'db_searchfood');  //definindo o Banco de Dados 
 
         //Definindo o Timezone do PHP para o horário do Brasil
         date_default_timezone_set('America/Sao_Paulo');

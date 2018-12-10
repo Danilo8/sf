@@ -1,11 +1,11 @@
 /* Style all font awesome icons */
 #i {
-    padding: 20px;
-    font-size: 18px;
+    padding: 30%;
+    font-size: 22px;
     width: 58px;
     text-align: center;
     text-decoration: none;
-    border-radius: 50%;
+    border-radius: 2rem;
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.55);
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.55);
     box-shadow: 0 1px 2px rgba(0,0,0,.55); 
@@ -19,14 +19,8 @@
 /* Set a specific color for each brand */
 
 /* Facebook */
-.fa-facebook {
+.fa-facebook-f {
     background: #3B5998;
-    color: white;
-}
-
-/* Twitter */
-.fa-twitter {
-    background: #55ACEE;
     color: white;
 }
 
@@ -37,7 +31,7 @@
 }
 
 /* youtube*/
-.fa-youtube-play {
+.fa-youtube {
     background: #bb0000;
     color: white;
 }
